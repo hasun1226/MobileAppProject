@@ -1,0 +1,12 @@
+- Log of the meeting
+- Tech stack
+- Roles and responsibilities
+- Meeting plan (frequency) - Events
+- How we organize issues (Trello)
+- iteration plan                                                                                        
+
+Idea suggestions:
+- product.md - answering the third question on there -> a possibly good idea
+- Improving an idea that already exists?
+- Do not worry about scope
+
