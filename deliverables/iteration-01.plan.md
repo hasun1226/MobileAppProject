@@ -1,24 +1,23 @@
 # YOUR PRODUCT/TEAM NAME
 
-## Iteration XX
+## Iteration 01
 
- * Start date: FILL IN THE DATE WHEN YOU HAD YOUR FIRST TEAM PLANNING MEETING
+ * Start date: Thursday, October 5th, 2016
  * End date: FILL IN THE DATE WHEN YOU ARE PLANNING TO HAVE YOUR REVIEW MEETING
 
 ## Process
 
-(Optional:) Introduction
+The first meeting: We talked about the project ideas and decided which to work on.
 
 #### Roles & responsibilities
 
-Describe the different roles (e.g. developers, communication facilitator,
-proof-reader, etc.) on the team, and the responsibilities associated with each role.
+ * Developer: 
+ * : 
 
 #### Events
 
 Please describe the meetings you planning to have:
- * When and where? In-person or online?
- * What's the purpose of each meeting?
+ * Every Wednesday 11PM on Google Hangout
 
 #### Artifacts
 
@@ -33,9 +32,9 @@ For example:
 
 Goals and tasks:
 
- * Describe your goals for this iteration and the tasks that you will have to complete in order to achieve these goals.
- * When listing goals/tasks, order the items from most to least important.
- * Feel free (but not obligated) to specify some/all tasks as user stories.
+ * Decide on the product idea
+ * Decide the roles and responsibilities
+ * 
 
 Artifacts
 
