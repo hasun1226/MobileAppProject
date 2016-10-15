@@ -34,7 +34,7 @@ Goals and tasks:
 
  * Decide on the product idea
  * Decide the roles and responsibilities
- * 
+ * Prepare a product backlog
 
 Artifacts
 
