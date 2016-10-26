@@ -3,7 +3,7 @@
 ## Iteration 01
 
  * Start date: Thursday, October 5th, 2016
- * End date: FILL IN THE DATE WHEN YOU ARE PLANNING TO HAVE YOUR REVIEW MEETING
+ * End date: Saturday, October 15th, 2016
 
 ## Process
 
@@ -11,34 +11,56 @@ The first meeting: We talked about the project ideas and decided which to work o
 
 #### Roles & responsibilities
 
- * Developer: 
- * : 
+Developer:
+Frontend
+Backend
+Database/Database designer
+UI Designer
+Project Manager
+Note Taker
+Presenter
+Graphic Designer
+
 
 #### Events
 
 Please describe the meetings you planning to have:
- * Every Wednesday 11PM on Google Hangout
+
+Weekly progress meetings, every Wednesday 11PM on Google Hangout
+In-person meetings for planning and review, to ensure goals are met and deliverables finished.
 
 #### Artifacts
 
 Please describe the artifacts that you will produce in order to organize and keep track of your team's progress.       
 For example:
- * To-do lists, burndown chart, schedule, etc.
- * If you include charts/diagrams, make sure to explain what they represent.
- * If you're maintaining a to-do list, make sure to mention which tool you're using, how you are prioritizing items and how items get assigned to team members.
+
+Workflow diagrams
+Mockups for user interface
+Trello board to store meeting minutes and issue tracking
+Googledocs : planning meeting, review meeting, product deliverables
+Schedule :  Timeline added to the workflow diagrams
+
 
 
 ## Product
 
 Goals and tasks:
 
- * Decide on the product idea
- * Decide the roles and responsibilities
- * Prepare a product backlog
+Finish the deliverables: plan.md, review.md, product.md
+Prepare a workflow diagram(Slacker side & Notetaker side) : Shows which functionalities the application should provide, and thus should be implemented
+Decide the roles and responsibilities
+Prepare a product backlog
 
 Artifacts
 
- * Describe the artifacts (diagrams, interactive mock-ups, wireframes, actual code, etc.)
-   that you are planning to produce by the end of (and during) this iteration.
- * Be precise.         
-   For example: "Build the website" is not precise at all, but "Build a static home page and upload it somewhere, so that it is publicly accessible" is much clearer.
+Workflow diagrams (Note taker workflow, Slacker workflow)
+Complete version of product.md, plan.md, review.md
+Design mock-ups for the UI:
+- Login screen
+- Request screen
+- Settings Screen
+- List of Available Note Takers Screen
+- Handshake Screens (To accept a request)
+
+Note: The backend design will also be developed to give output to each screen.
+
