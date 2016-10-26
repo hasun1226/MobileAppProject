@@ -11,15 +11,13 @@ The first meeting: We talked about the project ideas and decided which to work o
 
 #### Roles & responsibilities
 
-Developer:
-Frontend
-Backend
-Database/Database designer
-UI Designer
-Project Manager
-Note Taker
-Presenter
-Graphic Designer
+- Developer:
+	Frontend (split team)
+	Backend	(split team)
+- Database developer/designers
+- UI Designers
+- Project Manager (take turns)
+- Note Taker (take turns)
 
 
 #### Events
@@ -34,11 +32,11 @@ In-person meetings for planning and review, to ensure goals are met and delivera
 Please describe the artifacts that you will produce in order to organize and keep track of your team's progress.       
 For example:
 
-Workflow diagrams
-Mockups for user interface
-Trello board to store meeting minutes and issue tracking
-Googledocs : planning meeting, review meeting, product deliverables
-Schedule :  Timeline added to the workflow diagrams
+- Workflow diagrams
+- Mockups for user interface
+- Trello board to store meeting minutes and issue tracking
+- Googledocs : planning meeting, review meeting, product deliverables
+- Schedule :  Timeline added to the workflow diagrams
 
 
 
@@ -46,10 +44,10 @@ Schedule :  Timeline added to the workflow diagrams
 
 Goals and tasks:
 
-Finish the deliverables: plan.md, review.md, product.md
-Prepare a workflow diagram(Slacker side & Notetaker side) : Shows which functionalities the application should provide, and thus should be implemented
-Decide the roles and responsibilities
-Prepare a product backlog
+- Finish the deliverables: plan.md, review.md, product.md
+- Prepare a workflow diagram(Slacker side & Notetaker side) : Shows which functionalities the application should provide, and thus should be implemented
+- Decide the roles and responsibilities
+- Prepare a product backlog
 
 Artifacts
 
