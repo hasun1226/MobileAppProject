@@ -14,8 +14,7 @@ A typical user journey on Notes4U would be:
 
 It is important to note that Notes4U is not a replacement for course attendance/participation. Notes4U strictly concerns itself with written notes and not audio recordings.
 
-** Workflow Diagram Here **
-
+![workflow diagram](../artifacts/Workflow.png)
 #### Q2: Who are your target users?
 
 - UofT students aged 17+ who have to miss a class for various reasons (sickness, work, urgent deadlines, unforseen events)
