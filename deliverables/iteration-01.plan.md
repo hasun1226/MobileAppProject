@@ -1,4 +1,4 @@
-# YOUR PRODUCT/TEAM NAME
+# Notes4U
 
 ## Iteration 01
 
@@ -7,25 +7,32 @@
 
 ## Process
 
+In our first Iteration we adopted multiple aspects from Agile software development practices. We 
+
 The first meeting: We talked about the project ideas and decided which to work on.
 
 #### Roles & responsibilities
 
-- Developer:
-	Frontend (split team)
-	Backend	(split team)
-- Database developer/designers
-- UI Designers
-- Project Manager (take turns)
-- Note Taker (take turns)
-
+ * Developer
+    * Uses user stories / tasks / defects to implement functionality for the application. 
+    * Development tasks are separated between Front-end and Back-end.
+ * Meeting Facilitator
+    * Facilitates meetings, ensures that all the questions we had going into the meeting are either resolved or can be actioned upon.
+ * Notetaker
+    * Takes meeting minutes during meetings.
+ * Written Work Editors
+    * Proofreads written deliverables.
+ * Project Manager
+    * 
+ * Presenter
+    * Prepares any presentations that the group may have in tutorial.
 
 #### Events
 
-Please describe the meetings you planning to have:
-
-Weekly progress meetings, every Wednesday 11PM on Google Hangout
-In-person meetings for planning and review, to ensure goals are met and deliverables finished.
+ * Meeting every Wednesday 11PM on Google Hangout
+ * Asynchronous communication through Slack
+ * In-person meetings on an as-needed basis
+ * Separate meetings for the front-end working group and the back-end working group (frequency and timing to be determined)
 
 #### Artifacts
 
