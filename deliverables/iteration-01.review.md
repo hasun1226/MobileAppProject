@@ -1,51 +1,58 @@
-# YOUR PRODUCT/TEAM NAME
+# Notes4U
 
 ## Iteration XX - Review & Retrospect
 
- * When: FILL IN THE DATE WHEN YOU ACTUALLY HAD YOUR REVIEW MEETING
- * Where: PHYSICAL LOCATION AND/OR ONLINE
+ * When: Saturday, October 15, 2016
+ * Where: Gerstein 2108
 
 ## Process - Reflection
 
-(Optional) Short introduction
-
 Decisions turned out well:
 
- * List a few (2-5) decisions, from most to least important.
- * Support your argument (that a decisions was successful) by referring/linking to process artifact(s).
+ * Unanimous agreement on Product Idea
+    * Adopted an agile Dot Voting process to choose a product idea
+    * Documented on Trello: https://trello.com/b/kB7JG8RA/iteration-1-meeting-notes
+ * Deciding to do Google Hangouts Meetings on a weekly frequency
+    * Enabled more flexibiity for everyone's schedule
+    * Slack conversation at team23fam.slack.com re: meeting times and punctuality
+ * Using Trello to store meeting proceedings
+    * Significantly reduces the overhead of keeping artifacts for our meetings
+    * Trello board link: https://trello.com/team19104 
+
 
 Decisions did not turn out as well as you hoped:
 
- * Once again, list a few (2 - 5) decisions, from most to least important.
- * As before, support your arguments by referring/linking to process artifacts.
+ * Deciding to have Release Planning before having an idea of what a typical user journey is
+    * Spent a meeting working on the Workflow.png when we wanted to complete the Product Backlog.
+ * Attempting to assign roles and responsibilities before having an idea of how we would go about implementing the application
+    * Our initial attempt at deciding on roles and responsibilities in the first meeting:
+        * https://trello.com/b/kB7JG8RA/iteration-1-meeting-notes
+    * Our second attempt:
+        * https://trello.com/b/08nEarXy/iteration-2-meeting-notes
 
-We are planning to make the following changes to our process:
-
- * List the changes you are planning to make, if any, from most to least important.
- * For each change, explain why you are making it by referring to a decision that didn't work well.
-
+We are not currently planning to make any changes to our process.
 
 ## Product - Review
 
 Goals/tasks that were met/completed:
 
- * List goals/tasks, from most to least important.
- * If a goal/task was not part of the original iteration plan, please mention it.
- * For each goal/task, refer to artifact(s) that show that it was met/completed.
+ * Workflow Diagram (planned)
+    * In `../artifacts/Workflow.png`
+ * Roles and Responsibilities assigned (planned)
+    * https://trello.com/b/kB7JG8RA/iteration-1-meeting-notes
+ * Deliverables completed (planned)
+    * You're reading them.
+ * Product prototype mock-ups
+    * In `../artifacts/mockups.jpg` 
 
 Goals/tasks that were planned but not met/completed:
 
- * List goals/tasks, from most to least important.
- * For each goal/task, explain why it was not met/completed.      
-   e.g. Did you change your mind, or did you just not get to it yet?
-
-(Optional) Goals/tasks that were not originally planned, but ended up being not met/completed:
-
- * List goals/tasks, from most to least important.
- * For each goal/task, explain why you decided to change your plan and add this goal/task.
-
+ * Product Backlog
+    * Realized that we had misalignment on what the typical user journey was, so we had to hash that our before we could define a workflow.
+    * The Workflow Diagram was the main blocker, so now that that's done we can create this.
 
 Going into the next iteration, our main insights are:
 
- * List the few (2-5) high-level concepts that should guide your work for the next few weeks.
- * These concepts should help you prioritize features and decide on where to focus your efforts.
+ * Figure out what the thinnest vertical slice of functionality we can implement is so we can get a working prototype up as soon as possible.
+ * Prioritize the Product Backlog weekly, so that we are always aware of whether or not we are on track to completing the final product.
+
