@@ -36,36 +36,42 @@ The first meeting: We talked about the project ideas and decided which to work o
 
 #### Artifacts
 
-Please describe the artifacts that you will produce in order to organize and keep track of your team's progress.       
-For example:
-
 - Workflow diagrams
 - Mockups for user interface
 - Trello board to store meeting minutes and issue tracking
 - Googledocs : planning meeting, review meeting, product deliverables
 - Schedule :  Timeline added to the workflow diagrams
-
-
+- Slack : asynchronous discussions, meeting planning
 
 ## Product
 
-Goals and tasks:
+### Goals
 
-- Finish the deliverables: plan.md, review.md, product.md
-- Prepare a workflow diagram(Slacker side & Notetaker side) : Shows which functionalities the application should provide, and thus should be implemented
-- Decide the roles and responsibilities
-- Prepare a product backlog
+- Complete the deliverables: plan.md, review.md, product.md.
+- Prepare a workflow diagram showing a typical user journey through the application.
+- Decide on roles and responsibilities.
+- Prepare a product backlog outlining all stories that need to be completed for our MVP to be finished.
 
-Artifacts
+### Tasks
 
-Workflow diagrams (Note taker workflow, Slacker workflow)
-Complete version of product.md, plan.md, review.md
-Design mock-ups for the UI:
-- Login screen
-- Request screen
-- Settings Screen
-- List of Available Note Takers Screen
-- Handshake Screens (To accept a request)
+- Hold a meeting to decide on the following:
+    - pitch product ideas / decide on an idea.
+    - assign roles and responsibilities
+- Hold a meeting to flesh out the product idea
+    - Decide on MVP
+    - Figure out what the typical user journey should be
+    - Create a workflow diagram as an output of the meeting
+- Add user stories to product backlog
 
-Note: The backend design will also be developed to give output to each screen.
+### Artifacts
+
+- Workflow diagrams (Notetaker workflow, Slacker workflow)
+- Complete version of product.md, plan.md, review.md
+- Design mock-ups for the UI:
+    - Login screen
+    - Request screen
+    - Settings Screen
+    - List of Available Note Takers Screen
+    - Handshake Screens (To accept a request)
+- A JSON API that the backend provides
 
