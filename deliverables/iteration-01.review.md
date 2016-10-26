@@ -1,6 +1,6 @@
 # Notes4U
 
-## Iteration XX - Review & Retrospect
+## Iteration 01 - Review & Retrospect
 
  * When: Saturday, October 15, 2016
  * Where: Gerstein 2108
