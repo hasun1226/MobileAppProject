@@ -5,12 +5,6 @@
  * Start date: Thursday, October 5th, 2016
  * End date: Saturday, October 15th, 2016
 
-## Process
-
-In our first Iteration we adopted multiple aspects from Agile software development practices. We 
-
-The first meeting: We talked about the project ideas and decided which to work on.
-
 #### Roles & responsibilities
 
  * Developer
@@ -23,7 +17,8 @@ The first meeting: We talked about the project ideas and decided which to work o
  * Written Work Editors
     * Proofreads written deliverables.
  * Project Manager
-    * 
+    * Ensures that everyone is aware of when meetings are.
+    * Tracks the team's iteration velocity against the product backlog and informs the team whether or not we may need to descope features.
  * Presenter
     * Prepares any presentations that the group may have in tutorial.
 
