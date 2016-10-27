@@ -1,0 +1,135 @@
+============================================================================
+== Login Page
+============================================================================
+
+
+for POST request of url "/login/"
+-------------------------------------------------------------------------
+
+{
+    username: "",
+    password: ""
+}
+
+
+and server reply with
+{
+    token: ""
+}
+
+for POST request of url "/login_token/"
+-------------------------------------------------------------------------
+
+{
+    token: ""
+}
+
+
+and server reply with
+{}
+
+
+for POST request of url "/signup/"
+-------------------------------------------------------------------------
+
+{
+    username: "",
+    password: "",
+    email: "" 
+}
+
+
+and server reply with
+'status': 1 if success, 0 if fail
+{
+    status: ""  ,
+    session_key: "",
+    error:  ""  ,
+}
+
+============================================================================
+== Main Page
+============================================================================
+
+
+for POST request of url "/get_notification/"
+-------------------------------------------------------------------------
+
+{
+    token: ""
+}
+
+
+and server reply with
+'status':\
+1 if success, 0 if fail
+{
+    num_notif: 0,
+    notifications: [
+        {
+            notif_type:
+        ### to be determind ###
+        }
+    ]
+}
+
+for POST request of url "/get_mainID/"
+-------------------------------------------------------------------------
+
+{
+    session_key: ""
+}
+
+and server reply with
+{
+    userID: ""
+}
+
+
+============================================================================
+== Profile Page
+============================================================================
+
+for POST request of url "/get_profile/"
+-------------------------------------------------------------------------
+
+{
+    session_key: "",
+    userID: ""
+}
+
+
+and server reply with
+'status': 1 if success, 0 if fail
+{
+    first_name: "",
+    last_name "",
+    email: "",
+    phone: ""
+    ### , post: "" ???###
+}
+
+============================================================================
+== Post Request
+============================================================================
+
+for POST request of url "/post_request/"
+-------------------------------------------------------------------------
+
+{
+    session_key: "",
+    class:
+}
+
+
+and server reply with
+'status': 1 if success, 0 if fail
+{
+    first_name: "",
+    last_name "",
+    email: "",
+    phone: ""
+    ### , post: "" ???###
+}
+
+
