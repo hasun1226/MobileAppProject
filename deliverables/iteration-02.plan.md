@@ -1,45 +1,68 @@
-# YOUR PRODUCT/TEAM NAME
+# Notes4U
 
-## Iteration XX
+## Iteration 02
 
- * Start date: FILL IN THE DATE WHEN YOU HAD YOUR FIRST TEAM PLANNING MEETING
- * End date: FILL IN THE DATE WHEN YOU ARE PLANNING TO HAVE YOUR REVIEW MEETING
+ * Start date: Friday, November 4, 2016
+ * End date: Monday, November 14, 2016
 
 ## Process
 
-(Optional:) Introduction
+Prioritize the tasks and assign tasks to the team members.
 
 #### Roles & responsibilities
 
-Describe the different roles (e.g. developers, communication facilitator,
-proof-reader, etc.) on the team, and the responsibilities associated with each role.
+* UI designer: Muser
+   * UI designer will design the User Interface in a way that clients can easily navigate through the Application and explain this information to the developers. 
+   * UI designer is also in charge of designing the graphical items to be used in the Application such as Application logo or background image.
+* Back-end developers: Eddie, Kyle, Sunny
+   * Back-end developers are responsible for developing the database which the Application will run on.
+   * Back-end developers will deploy the server that keeps the database and deliver the necesary information to the front-end developers.
+* Front-end developers: Charga, James, Jimmy, Tyler
+   * Front-end developers are responsible for developing the pages the clients will see and interact with. More specifically, the front-end developers will implement the methods that will handle the events that happen inside the Application on Android Studio.
+   * Front-end developers will refer to the layout specified by the UI designer and coordinate the pages accordingly.
+* Video shooters: Charga, Eddie, Sunny, Tyler
+   * Once the team has a working prototype, the video shooters will make a video demo to present in deliverable 2.
+   * Video shooters are responsible for deciding what kind of video to make, writing the necessary scripts, choosing appropriate location and time for the video.
 
 #### Events
 
-Please describe the meetings you planning to have:
- * When and where? In-person or online?
- * What's the purpose of each meeting?
+* "General Team Meeting" every Wednesday 11PM on Google Hangout
+   * This meeting is intended to discuss progresses between teams; front-end, back-end, UI designer.
+   * In order to discuss progresses, one should have a progress. We expect this meeting to motivate members to contribute every week.
+* "Back-end team meeting" every Wednesday 5PM in-person
+   * This meeting is intended to develop the databases for Application.
+   * As not many of the back-end team members are familiar with the Ruby language, this meeting also serves as a learning session together.
+   * After some discussion, the team members can go to the TA's office hour(7PM-8PM) if there are any questions that need to be answered.
+* "Video making session"
+   * This session will gather the responsible members to work on the video demo.
 
 #### Artifacts
 
-Please describe the artifacts that you will produce in order to organize and keep track of your team's progress.       
-For example:
- * To-do lists, burndown chart, schedule, etc.
- * If you include charts/diagrams, make sure to explain what they represent.
- * If you're maintaining a to-do list, make sure to mention which tool you're using, how you are prioritizing items and how items get assigned to team members.
-
+* To-do list using Trello
+   * To-do list on Trello is prepared during the General Team meeting every Wednesday on Google Hangout by discussing what must be done at the moment.
+   * After agreeing on the prioirities, if the task is a member-specific task, each member picks which task to work on. 
+* Schedule using Google calendar
+   * Front-end team's Midpoint checkup by November 9th, Final checkup by November 12th.
 
 ## Product
 
-Goals and tasks:
+### Goals and tasks:
 
- * Describe your goals for this iteration and the tasks that you will have to complete in order to achieve these goals.
- * When listing goals/tasks, order the items from most to least important.
- * Feel free (but not obligated) to specify some/all tasks as user stories.
+* Make a working prototype
+   * Prioritize which features must be implemented, and which features can be ignored at the moment.
+   * Deploying the database server so that it can be accessible to the team should be the priority because the front-end team cannot test their codes without the working database.
+   * Once the database server is deployed, both team members must learn how to interact with the server through the Application.
+* Make a video demo once we have a working prototype
+   * Decide how the video will look like: 
+     Option 1) Capture the screens and make a static video that will primarily rely on the narrations.
+     Option 2) Use a camera to make a more dynamic video that may require actings.
+   * Write a narrative/acting script for the video demo.
 
-Artifacts
+### Artifacts
 
- * Describe the artifacts (diagrams, interactive mock-ups, wireframes, actual code, etc.)
-   that you are planning to produce by the end of (and during) this iteration.
- * Be precise.         
-   For example: "Build the website" is not precise at all, but "Build a static home page and upload it somewhere, so that it is publicly accessible" is much clearer.
+* Build a semi-final version of the database and deploy it on heroku: http://notes4u.herokuapp.com/
+* Actual codes for Application pages that are emulatable on Android Studio.
+   * Pages include pages for Login, Posting requests, Viewing their requests, Viewing the Notetaker profiles
+* Screenshots of the Application's functionalities which are to be included in the video demo in case they are necessary.
+* Scripts and layouts of the video demo so that Video shooters can make the video demo correspondingly.
+
