@@ -57,14 +57,14 @@ Prioritize the tasks and assign tasks to the team members.
 ### Goals and tasks:
 
 1. Develop Note requester’s (a.k.a. Slacker’s) portion of the Application
-  ⋅⋅1. Now that we have the User Interface laid out, deploying the database server so that it can be accessible to the team is the top-priority because the front-end team cannot test their codes without the working database.
-  ⋅⋅2. Core features that the front-end team will implement are user login, posting a request for the note, viewing the Note takers’ profiles, and the handshakes between the Slacker and Note taker.
-  ⋅⋅3. Having a logo and background image for the Application is solely for the aesthetics of the Application, so it is the least priority.
+   1. Now that we have the User Interface laid out, deploying the database server so that it can be accessible to the team is the top-priority because the front-end team cannot test their codes without the working database.
+   2. Core features that the front-end team will implement are user login, posting a request for the note, viewing the Note takers’ profiles, and the handshakes between the Slacker and Note taker.
+   3. Having a logo and background image for the Application is solely for the aesthetics of the Application, so it is the least priority.
 
 2. Make a video demo that captures the core features of the Application
-  ⋅⋅1. Capture the necessary screens of the Application to present in the video so that the videographers can edit and make a script depending on the screenshots.
-  ⋅⋅2. Write a narrative script and make sure it fits into 3 minutes.
-  ⋅⋅3. Edit the video if editing is considered necessary or some narrations and screens are considered to be unnecessary.
+   1. Capture the necessary screens of the Application to present in the video so that the videographers can edit and make a script depending on the screenshots.
+   2. Write a narrative script and make sure it fits into 3 minutes.
+   3. Edit the video if editing is considered necessary or some narrations and screens are considered to be unnecessary.
 
 
 ### Artifacts
