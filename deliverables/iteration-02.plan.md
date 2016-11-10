@@ -48,9 +48,6 @@ Prioritize the tasks and assign tasks to the team members.
 * To-do list using Trello
    * Prepared during the General Team meeting (every Wednesday on Google Hangout) by discussing what must be done at the moment in order to move on to the next stage.
    * After agreeing on the priorities, each member picks which task to work on if the task is a member-specific task.
- 
-* Schedule using Google calendar
-   * Keep track of the deadlines and send push alarms when the deadline is approaching.
 
 ## Product
 
