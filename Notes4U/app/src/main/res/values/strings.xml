@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Notes4U</string>
+    <string name="drawer_opened">Open</string>
+    <string name="drawer_closed">Closed</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">Notes4U</string>
 
