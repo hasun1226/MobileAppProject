@@ -30,8 +30,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+
+import team19.notes4u.DB.User;
+import team19.notes4u.DB.Wrapper;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -52,6 +60,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "foo@example.com:hello", "bar@example.com:world"
     };
+
+    private static Map<String,String> passwords;
+
+    private List<User> users;
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
@@ -90,6 +102,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 attemptLogin();
             }
         });
+
+        Button mEmailSignUpButton = (Button) findViewById(R.id.email_sign_up_button);
+        mEmailSignUpButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+        passwords = new HashMap<String, String>();
+
+        new DownloadUserList().execute();
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
@@ -198,7 +222,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        return true;
     }
 
     /**
@@ -316,14 +340,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 return false;
             }
 
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
-                }
+            if (passwords.containsKey(mEmail)) {
+                return (mPassword.equals(passwords.get(mEmail)));
             }
-            return true;
+            return false;
         }
 
         @Override
@@ -333,10 +353,19 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             if (success) {
                 // Pass the user email to the MainActivity
-                Intent intent = new Intent(LoginActivity.this, PostActivity.class);
+                Intent intent = new Intent(LoginActivity.this, ViewSlackRequestsActivity.class);
                 EditText editText = (EditText) findViewById(R.id.email);
                 String email = editText.getText().toString();
-                intent.putExtra(user, email);
+                User thisUser = new User();
+                for (User u : users) {
+                    if (u.getEmail().equals(email)) {
+                        thisUser = u;
+                        break;
+                    }
+                }
+                User.user = thisUser;
+                System.out.println(User.user.getId());
+                intent.putExtra("user", thisUser.getId());
                 startActivity(intent);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
@@ -350,5 +379,48 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
         }
     }
+
+    // Download JSON file AsyncTask
+    private class DownloadUserList extends AsyncTask<Object, Object, Void> {
+
+        @Override
+        protected Void doInBackground(Object... params) {
+            //        http://notes4u.herokuapp.com/users/1/requests
+//        format: 'users' + userid + '/requests'
+
+            String connectionString = ("users/");
+            Wrapper wrapper = new Wrapper(connectionString);
+
+            List<JSONObject> user_array = wrapper.getJsonObjects();
+            users = new ArrayList<>();
+            for(JSONObject j : user_array) {
+                User u = new User();
+                System.out.println(j.toString());
+                try {
+                    u.setEmail(j.getString("email"));
+                    u.setId(j.getString("id"));
+                    u.setCreated_at(j.getString("created_at"));
+                    u.setUpdated_at(j.getString("updated_at"));
+                    u.setFirst_name(j.getString("first_name"));
+                    u.setLast_name(j.getString("last_name"));
+                    u.setUsername(j.getString("username"));
+                    u.setPassword(j.getString("password"));
+                    u.setProfile_picture(j.getString("profile_picture"));
+                    passwords.put(j.getString("email"), j.getString("password"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                users.add(u);
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void v) {
+            return;
+        }
+    }
 }
+
+
 
