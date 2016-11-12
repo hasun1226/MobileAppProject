@@ -58,15 +58,17 @@ public class Wrapper {
 	public JSONObject InsertRequest(Request request) throws JSONException, IOException {
 		JSONObject JSONrequest = new JSONObject();
 		JSONrequest.put("user_id", request.getUser());
-		JSONrequest.put("course_id", request.getCourse());
-		JSONrequest.put("when", request.getDatetime());
+		JSONrequest.put("course_id", "1");
+		JSONrequest.put("when", "2016-09-13T10:00:00.000Z");
 		JSONrequest.put("location", request.getLocation());
 		this.connectionString = this.staticConnectionString + "requests";
 
-		String urlParameters = "\\{request: " + JSONrequest.toString() + "}";
+		String urlParameters = "{request: " + JSONrequest.toString() + "}";
+		System.out.println("Object: " + urlParameters);
 		byte[] postData = urlParameters.getBytes();
 		int postDataLength = postData.length;
 		URL url = new URL( this.connectionString );
+		System.out.println("Connection: " + this.connectionString);
 		HttpURLConnection conn= (HttpURLConnection) url.openConnection();
 		conn.setDoOutput( true );
 		conn.setInstanceFollowRedirects( false );
@@ -75,14 +77,16 @@ public class Wrapper {
 		conn.setRequestProperty( "charset", "utf-8");
 		conn.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
 		conn.setUseCaches( false );
+		//System.out.println(conn.getResponseMessage() + " : " + conn.getResponseCode());
 		try {
 			DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
 			wr.write( postData );
 			wr.close();
 		}
 		catch (Exception e){
-
+			System.out.println(e.getMessage());
 		}
+		System.out.println(conn.getResponseMessage() + " : " + conn.getResponseCode());
 		return JSONrequest;
 	}
 

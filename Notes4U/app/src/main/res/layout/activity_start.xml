@@ -20,7 +20,6 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        style="@style/homePageButton"
         android:text="Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +30,6 @@
         android:onClick= "go_to_login"/>
 
     <Button
-        style="@style/homePageButton"
         android:text="Sign up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

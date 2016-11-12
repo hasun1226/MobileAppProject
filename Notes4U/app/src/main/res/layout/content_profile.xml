@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_root"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="team19.notes4u.ProfileActivity"
+    tools:showIn="@layout/activity_profile2">
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:weightSum="1"
         android:baselineAligned="false"
-        android:layout_height="410dp"
-        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="top|center"
-        android:layout_width="340dp"
+        android:layout_width="match_parent"
         android:background="@drawable/customborder"
         android:id="@+id/linearLayout">
 
@@ -26,20 +33,19 @@
 
         <RatingBar
             android:layout_width="wrap_content"
+            android:numStars="5"
             android:gravity="center"
-            android:layout_height="43dp"
-            android:id="@+id/starBar"
-            android:layout_marginLeft="40dp" />
+            android:layout_height="wrap_content"
+            android:id="@+id/starBar" />
 
         <ImageView
             android:layout_marginTop="10dp"
-            android:layout_width="340dp"
-            android:layout_height="299dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/logo"
             android:background="@drawable/testdp"
-            android:layout_marginLeft="9dp"
             android:layout_gravity="center"
-            android:layout_weight="0.27" />
+            android:layout_weight="1.0" />
     </LinearLayout>
 
     <LinearLayout
@@ -53,13 +59,13 @@
 
         <Button
             android:text="ACCEPT NOTETAKER"
-            android:layout_width="230dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_gravity="center"
             android:id="@+id/AcceptNoteTaker"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:elevation="17dp" />
+            android:elevation="0dp" />
     </LinearLayout>
 
 

@@ -3,24 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="team19.notes4u.MainActivity">
 
+    <item android:id="@+id/menu_item_1" android:title="Menu Item 1" />
+    <item android:id="@+id/menu_item_2" android:title="Menu Item 2" />
+    <item android:id="@+id/menu_item_3" android:title="Menu Item 3" />
     <item
-        style="@style/menuItem"
-        android:id="@+id/menu_item_1"
-        android:title="Request Notes" />
-    <item
-        style="@style/menuItem"
-        android:id="@+id/menu_item_2"
-        android:title="Find Notetakers" />
-    <item
-        style="@style/menuItem"
-        android:id="@+id/menu_item_3"
-        android:title="Messages" />
-    <item
-        style="@style/menuItem"
-        android:id="@+id/menu_item_4"
-        android:title="Menu Item 4" />
-    <item
-        style="@style/menuItem"
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"

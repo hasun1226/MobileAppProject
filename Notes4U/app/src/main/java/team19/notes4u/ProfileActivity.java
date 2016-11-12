@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import org.json.JSONException;
 import org.json.JSONObject;
+import team19.notes4u.DB.Wrapper;
 
 import java.util.List;
 
@@ -34,9 +35,10 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
-
+        setContentView(R.layout.activity_profile2);
+        userName = (TextView) findViewById(R.id.userID);
         Button acceptButton = (Button) findViewById(R.id.AcceptNoteTaker);
+        setTitle("NoteTaker Profile");
 
 
         acceptButton.setOnClickListener(new View.OnClickListener(){
@@ -59,23 +61,20 @@ public class ProfileActivity extends AppCompatActivity {
         url = "users/" + Integer.toString(userID) + "/ratings";
         wrapper = new Wrapper(url);
         new fetchData().execute();
-        userName.setText("Steve Johnson");
     }
 
     private class fetchData extends AsyncTask<Void, Void, List<JSONObject>> {
         @Override
         protected void onPreExecute() {
-            userName = (TextView) findViewById(R.id.userID);
             starRating = (RatingBar) findViewById(R.id.starBar);
         }
 
         List<JSONObject> jsonObjects;
         @Override
         protected List<JSONObject> doInBackground(Void... args) {
-            wrapper.openConnection();
             try {
                 jsonObjects = wrapper.getJsonObjects();
-            } catch (JSONException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             return jsonObjects;
@@ -88,7 +87,7 @@ public class ProfileActivity extends AppCompatActivity {
                 rating = user.getString("rating");
                 starRating.setNumStars(5);
                 starRating.setRating(Integer.parseInt(rating)%7);
-                wrapper.closeConnection();
+                userName.setText("Steve Johnson");
             } catch (JSONException e){
                 e.printStackTrace();
             }
