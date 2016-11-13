@@ -44,6 +44,9 @@
             android:name=".ViewSlackRequestsActivity"
             android:label="@string/title_activity_view_slack_requests"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".SlackerMenuActivity"
+            android:label="Slacker Menu"></activity>
     </application>
 
 </manifest>
