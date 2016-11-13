@@ -10,25 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="team19.notes4u.StartActivity">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/logo"
-        android:background="@drawable/logo"
-        android:layout_marginTop="85dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="Login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/login"
-        android:layout_marginTop="135dp"
-        android:layout_below="@+id/logo"
-        android:layout_toStartOf="@+id/logo"
-        android:onClick= "go_to_login"/>
-
     <Button
         android:text="Sign up"
         android:layout_width="wrap_content"
@@ -37,6 +18,30 @@
         android:layout_alignBaseline="@+id/login"
         android:layout_alignBottom="@+id/login"
         android:layout_toEndOf="@+id/logo"
-        android:onClick= "go_to_register"/>
+        android:onClick= "go_to_register"
+        android:background="#ef4e56"
+        android:textColor="#ffffff"/>
+
+    <Button
+        android:text="Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/login"
+        android:layout_marginTop="95dp"
+        android:onClick= "go_to_login"
+        android:layout_below="@+id/logo"
+        android:layout_toStartOf="@+id/logo"
+        android:background="#ef4e56"
+        android:textColor="#ffffff"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logo"
+        android:background="@drawable/logo2"
+        android:layout_marginTop="135dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        />
 
 </RelativeLayout>
