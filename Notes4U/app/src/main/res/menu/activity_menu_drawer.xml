@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/post_request"
+            android:title="Post Request" />
+        <item
+            android:id="@+id/notetake"
+            android:title="Notetake Now" />
+        <item
+            android:id="@+id/profile"
+            android:title="Profile" />
+        <item
+            android:id="@+id/settings"
+            android:title="Settings" />
+        <item
+            android:id="@+id/view_my_request"
+            android:title="View my Requests" />
+        <item
+            android:id="@+id/view_notetakes"
+            android:title="Recently viewed Request" />
+    </group>
+
+</menu>
