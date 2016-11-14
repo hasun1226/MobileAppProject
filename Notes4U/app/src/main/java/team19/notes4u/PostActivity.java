@@ -1,6 +1,7 @@
 package team19.notes4u;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,6 +15,12 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import team19.notes4u.DB.Rating;
 import team19.notes4u.DB.Request;
 
 import java.io.IOException;
@@ -23,6 +30,7 @@ import java.util.Collections;
 
 import team19.notes4u.DB.Wrapper;
 import team19.notes4u.DB.Course;
+import team19.notes4u.model.ApiService;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,6 +38,10 @@ import org.json.JSONObject;
 public class PostActivity extends AppCompatActivity {
 
     List<String> allCourses = new ArrayList<String>();
+    Retrofit retrofit;
+    ApiService apiService;
+    private String user_name;
+    private String user_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +49,22 @@ public class PostActivity extends AppCompatActivity {
 
         setTitle("Create a Request");
 
-
         Spinner courses = ((Spinner)findViewById(R.id.courseDropDown));
         final List<JSONObject> courseList = new ArrayList<JSONObject>();
         new DownloadCourseList().execute();
 
-
         setContentView(R.layout.activity_post);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Intent intent = getIntent();
+        user_name = intent.getExtras().getString("username");
+        user_id = intent.getExtras().getString("user");
+
+        retrofit = new Retrofit.Builder().baseUrl("https://notes4u.herokuapp.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        apiService = retrofit.create(ApiService.class);
     }
 
 
@@ -150,6 +169,35 @@ public class PostActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void args) {
+            Request in = new Request();
+            in.setUser(user_id);
+            String courseDate = getDateFromDatePicker((DatePicker)findViewById(R.id.dateOfCourse));
+            String courseTime = getTimeFromTimePicker((TimePicker)findViewById(R.id.timeOfCourse));
+
+                Request request = new Request();
+                in.setCourse(((Spinner)findViewById(R.id.courseDropDown)).getSelectedItem().toString());
+                request.setDatetime(courseDate + ":" + courseTime);
+                request.setLocation(((EditText)findViewById(R.id.locationOfCourse)).getText().toString().trim());
+
+            Call<String> createCall = apiService.create("Requests", in);
+            createCall.enqueue(new Callback<String>() {
+                @Override
+                public void onResponse(Call<String> call, Response<String> response) {
+                    Toast pieceToast= Toast.makeText(getApplicationContext(), "The request has been posted!", Toast.LENGTH_SHORT);
+                    pieceToast.show();
+
+                    Intent intent = new Intent(PostActivity.this, MainActivity.class);
+                    intent.putExtra("user", user_id);
+                    intent.putExtra("username", user_name);
+                    startActivity(intent);
+                }
+
+                @Override
+                public void onFailure(Call<String> call, Throwable t) {
+                    System.out.println("Failed adding ratings");
+                }
+            });
+
             System.out.println("I should probably move to the view requests screen");
         }
     }

@@ -356,7 +356,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             if (success) {
                 // Pass the user email to the MainActivity
-                Intent intent = new Intent(LoginActivity.this, ViewSlackRequestsActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 EditText editText = (EditText) findViewById(R.id.email);
                 String email = editText.getText().toString();
                 User thisUser = new User();
@@ -369,6 +369,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 User.user = thisUser;
                 System.out.println(User.user.getId());
                 intent.putExtra("user", thisUser.getId());
+                intent.putExtra("username", thisUser.getUsername());
                 startActivity(intent);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));

@@ -31,6 +31,8 @@ public class ProfileActivity extends AppCompatActivity {
     private Wrapper wrapper;
     private TextView userName;
     private RatingBar starRating;
+    private String user_id;
+    private String user_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,9 @@ public class ProfileActivity extends AppCompatActivity {
         Button acceptButton = (Button) findViewById(R.id.AcceptNoteTaker);
         setTitle("NoteTaker Profile");
 
+        Intent getting = getIntent();
+        user_id = getting.getExtras().getString("user");
+        user_name = getting.getExtras().getString("username");
 
         acceptButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -52,6 +57,11 @@ public class ProfileActivity extends AppCompatActivity {
                 // }
                 //});
                 alertDialog.show();  //<-- See This!
+
+                Intent move = new Intent(ProfileActivity.this, MainActivity.class);
+                move.putExtra("user", user_id);
+                move.putExtra("username", user_name);
+                startActivity(move);
             }
         });
 

@@ -43,10 +43,10 @@
         <activity
             android:name=".ViewSlackRequestsActivity"
             android:label="@string/title_activity_view_slack_requests"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SlackerMenuActivity"
-            android:label="Slacker Menu"></activity>
+            android:label="Slacker Menu" />
     </application>
 
 </manifest>
