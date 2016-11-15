@@ -9,7 +9,7 @@
 
 Takeaways after going into the actual development.
 
-Decisions turned out well:
+####Decisions turned out well:####
 
  1. Implementing and focusing on the Note requester's (a.k.a. Slacker's) portion of the application in order to include in Deliverable 2. Aside from the fact that the Slacker is the starting point of the application's usage, the development and task assignment were a lot easier by narrowing down the scope to the Slackers which led the team to complete the working prototype and the video in time.
  2. Using Ruby to develop the databse because the database was completed very quickly thanks to the handiness of the language (Deployed on heroku in the first week of November).
@@ -19,19 +19,19 @@ Decisions turned out well:
     * Back-end Team's To-d- List: https://trello.com/b/fpJuuHce/backend-tasks
  5. Using the screencapture for the video demo because no actings are required, and most of our team members are terrible actors.
 
-Decisions did not turn out as well as you hoped:
+####Decisions did not turn out as well as you hoped:####
 
  1. Although back-end team can get the job done and members are learning the Ruby on rails language, the team is highly reliant on sole member when tasks get too complicated.
  2. We were not able to have a video making session because of coordination problem. As a result, the videographers are reduced down to two members from initial four members but the members still had to work individually.
 
-We are planning to make the following change(s) to our process:
+####We are planning to make the following change(s) to our process:####
 
  1. We need to have a better coordination scheme moving into the hardest part of the development, especially when the school works will start to pour down on team members. This concern is also signaled by the second decision that did not turn out very well.
 
 
 ## Product - Review
 
-Goals/tasks that were met/completed:
+####Goals/tasks that were met/completed:####
 
  1. Actual codes for Application pages that can be emulated on Android Studio: [Notes4U](https://github.com/csc301-fall-2016/project-team-19/tree/master/Notes4U).
  2. Databases for Users, Requests, Replies on heroku: http://notes4u.herokuapp.com/
@@ -39,13 +39,13 @@ Goals/tasks that were met/completed:
  4. [Scripts](https://github.com/csc301-fall-2016/project-team-19/blob/master/artifacts/script.txt) of the video demo.
  5. [Notes4U logo](https://github.com/csc301-fall-2016/project-team-19/blob/master/Notes4U/app/src/main/res/drawable/logo2.png).
 
-Goals/tasks that were planned but not met/completed:
+####Goals/tasks that were planned but not met/completed:####
 
  1. A page for posting requests is not quite finished yet because of the connection error to the database. We are still trying to figure out what the problem is even after having four members of the team working on it.
  2. This was not part of the task in Iteration-plan, but back-end team is trying to figure out how to make the routing for nested resources to work. This has turned out to be difficult because majority of the back-end team members are not quite proficient in Ruby on rails language.
 
 
-Going into the next iteration, our main insights are:
+####Going into the next iteration, our main insights are:####
 
  * We need more effective and efficient ways to make decisions and to get results.
  * Increased responsibility on Front-end team.
