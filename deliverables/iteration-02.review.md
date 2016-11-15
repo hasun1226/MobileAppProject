@@ -35,8 +35,8 @@ Goals/tasks that were met/completed:
 
  1. Actual codes for Application pages that can be emulated on Android Studio: [Notes4U directory](https://github.com/csc301-fall-2016/project-team-19/tree/master/Notes4U).
  2. Databases for Users, Requests, Replies on heroku: http://notes4u.herokuapp.com/
- 3. Video demo.
- 4. Scripts of the video demo.
+ 3. [Video demo](https://github.com/csc301-fall-2016/project-team-19/blob/master/deliverables/Video_demo.mp4).
+ 4. [Scripts](https://github.com/csc301-fall-2016/project-team-19/blob/master/artifacts/script.txt) of the video demo.
  5. [Notes4U logo](https://github.com/csc301-fall-2016/project-team-19/blob/master/Notes4U/app/src/main/res/drawable/logo2.png).
 
 Goals/tasks that were planned but not met/completed:
