@@ -75,7 +75,7 @@ Prioritize the tasks and assign tasks to the team members.
 
 ### Artifacts
 
-* Databases for Users, Requests, Replies, Ratings on heroku: http://notes4u.herokuapp.com/
+* Databases for Users, Requests, Replies, Ratings on heroku
 * Actual codes for Application pages that can be emulated on Android Studio.
   * Pages include pages for Login, Posting requests, Viewing their requests, Viewing the Note taker profiles.
 * Video of the Application's functionalities which is to be submitted for Deliverable 2.
