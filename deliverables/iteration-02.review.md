@@ -15,8 +15,8 @@ Decisions turned out well:
  2. Using Ruby to develop the databse because the database was completed very quickly thanks to the handiness of the language (Deployed on heroku in the first week of November).
  3. Having a weekly general and team-based meeting because it got the team members to work on the application by asking for progresses and working on the project together in-person. It also allowed the team to finally have a get-together and members got less awkward with each other.
  4. Having a separate Trello board to keep track of the tasks that needs to be done. This was especially helpful when the team was developing the products because a group of a big size is supposedly hard to coordinate and monitor. However, this was not a big problem thanks to the Trello board letting each team know what they need to do and having each member to take charge of the task if nobody is in charge of it.
- * Front-end Team's To-do List: https://trello.com/b/K5NMotln/frontend-tasks
- * Back-end Team's To-d- List: https://trello.com/b/fpJuuHce/backend-tasks
+    * Front-end Team's To-do List: https://trello.com/b/K5NMotln/frontend-tasks
+    * Back-end Team's To-d- List: https://trello.com/b/fpJuuHce/backend-tasks
  5. Using the screencapture for the video demo because no actings are required, and most of our team members are terrible actors.
 
 Decisions did not turn out as well as you hoped:
