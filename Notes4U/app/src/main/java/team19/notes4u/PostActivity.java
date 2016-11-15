@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -179,10 +180,10 @@ public class PostActivity extends AppCompatActivity {
                 request.setDatetime(courseDate + ":" + courseTime);
                 request.setLocation(((EditText)findViewById(R.id.locationOfCourse)).getText().toString().trim());
 
-            Call<String> createCall = apiService.create("Requests", in);
-            createCall.enqueue(new Callback<String>() {
+            Call<ResponseBody> createCall = apiService.create("Requests", in);
+            createCall.enqueue(new Callback<ResponseBody>() {
                 @Override
-                public void onResponse(Call<String> call, Response<String> response) {
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                     Toast pieceToast= Toast.makeText(getApplicationContext(), "The request has been posted!", Toast.LENGTH_SHORT);
                     pieceToast.show();
 
@@ -193,7 +194,7 @@ public class PostActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(Call<String> call, Throwable t) {
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
                     System.out.println("Failed adding ratings");
                 }
             });

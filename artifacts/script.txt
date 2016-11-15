@@ -1,0 +1,30 @@
+Welcome to the demo of "Notes4U"
+
+Notes4U is designed to help university students to fufill their duties of keeping up with the class and managing extracurricular activities at the same time. Say a networking event was taking place at the same time as your lecture. You need to build connections for your future yet you need the lecture notes. With Notes4U, other students who are available and have enough knowledge about the course can take notes for you. 
+
+------------45 sec
+
+To use Notes4U, 
+
+Step 1: After clicking "Log-in," you will be brought to the login screen. Simply login to your account to begin.
+
+Step 2: Once you have logged in, you are ready to be a notetaker or a slacker.
+
+In this video, you are a slacker. So let's post request for notes!
+
+Step 3: You can select a course you are in and request for notes on specified date and time of the course 
+
+This time, I need a note for CSC301
+
+Now your request has been posted!
+
+Step 4: After notetakers have responded to your request, you can look up your requests and see who have responded in "View my requests"
+
+A student named Steve Johnson wishes to take a note for you!
+
+Step 5: Accept the notetaker, and now you are set to attend to your other duties!
+
+------------1 minute 30 sec
+
+You have walked through the Slacker's journey of using Notes4U. Our next task is to implement the Notetaker's portion of the application from applying for taking notes to responding to the slacker's acceptance. Thank you for watching!
+

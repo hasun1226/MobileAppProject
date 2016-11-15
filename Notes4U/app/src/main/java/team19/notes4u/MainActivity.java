@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -76,15 +77,18 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void addRating(View view) throws JSONException {
-        Call<String> createCall = apiService.create("Ratings", new Rating(1,1));
-        createCall.enqueue(new Callback<String>() {
+        Call<ResponseBody> createCall = apiService.create("Ratings", new Rating(1,1));
+        createCall.enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                textView.setText("Created new rating");
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                    System.out.println(response == null);
+                    textView.setText("Created new rating");
+
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
                 System.out.println("Failed adding ratings");
             }
         });

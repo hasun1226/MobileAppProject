@@ -15,6 +15,6 @@ import team19.notes4u.DB.Rating;
  */
 
 public interface ApiService {
-    @POST("{TableName}/create")
-    Call<String> create(@Path("TableName") String TableName, @Body Object input);
+    @POST("{TableName}")
+    Call<ResponseBody> create(@Path("TableName") String TableName, @Body Object input);
 }
