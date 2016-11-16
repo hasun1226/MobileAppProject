@@ -19,7 +19,7 @@ Takeaways after going into the actual development.
     * [Nov. 9th General meeting](https://trello.com/b/pA00rNHs/iteration-meeting-5)
  3. Using Ruby to develop the database because the database was completed very quickly thanks to the handiness of the language (Deployed on heroku on __November 5th__). Being able to deploy the database quickly allowed the front-end team to work on the prototype early.
  4. Each front-end member being assigned to a screen that was required for the Slacker's user story. After the database was launched, front-end team members could divide-and-conquer the works according to the screens. It saved a lot of time when trying to meet the goal without sacrificing the coherence of the application. This is prioritized after the back-end team's decision because front-end team's tasks were only possible after the back-end team's tasks for debugging purposes. See [Note4U responsibilities](https://github.com/csc301-fall-2016/project-team-19/tree/master/Notes4U) for how the tasks were divided.
- 5. Having a separate Trello board to keep track of the tasks that needs to be done. This was especially helpful when the team was developing the products because a group of this size is supposedly hard to coordinate and monitor. However, this was not a big problem thanks to the Trello board keeping tack of each teams' tasks and having each member to take charge of the task if nobody is in charge of it.
+ 5. Having a separate Trello board to keep track of the tasks that needs to be done. This was especially helpful when the team was developing the products because a group of this size is supposedly hard to coordinate and monitor. However, this was not a big problem thanks to the Trello board keeping track of each teams' tasks and having each member to take charge of the task if nobody is in charge of it.
     * Front-end Team's To-do List: https://trello.com/b/K5NMotln/frontend-tasks
     * Back-end Team's To-do- List: https://trello.com/b/fpJuuHce/backend-tasks
 
@@ -38,6 +38,7 @@ Takeaways after going into the actual development.
  1. We need to have a better coordination scheme moving into the hardest part of the development, especially when the school works will start to pour down on team members. This concern is also signaled by the first and third decision that did not turn out very well. Once we have a better scheduling and coordination schemes, many of the unnoticed failures can be mitigated.
  2. Continue with the divide-and-conquer system, but make sure that the list of tasks are complete through dynamic and thorough process. (i.e. In case the task list prepared at the beginning of the iteration, keep coming back to the task list to find if there are anything missing and assign them if any)
  3. Make a better effort to learn about tools the team is using in the application as to not overly rely on core members to get necessary work done, as shown in the fourth decision above.
+ 
 ## Product - Review
 
 ####Goals/tasks that were met/completed:####
