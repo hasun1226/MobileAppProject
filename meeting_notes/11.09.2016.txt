@@ -1,0 +1,12 @@
+Meeting Notes															11/9/2016														
+
+Sunny brought up point about us not having task list delegated. Solution: Put seperate front-end and back-end tasks lists in trello and delegate them to members.
+Muser brought up point about how to merge our screens? Charga answers work on it individually and put it together when we meet up.
+Charga question about how demo product works? Is it like walkthrough or advertising? Sunny:More like walkthrough introduce user to one story about project
+Eddie question: Does front-end require anything from back end? Charga: Needs to know how to post requests, James: Profile picture for users 
+Charga question: Has anyone tried to use android vm? Very laggy, we need a phone and to screen capture the phone.
+Charga: Front-end meeting on Friday to merge screens
+Eddie: Back to creating the task list
+Front-end created own trello board and add each other’s screen as task list. Create sub-tasks 
+Front-end decided to meet on November 11th to merge screens together
+James take place of Eddie to help on the Demo.

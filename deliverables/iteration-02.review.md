@@ -11,23 +11,26 @@ Takeaways after going into the actual development.
 
 ####Decisions turned out well:####
 
- 1. Implementing and focusing on the Note requester's (a.k.a. Slacker's) portion of the application in order to include in Deliverable 2. Aside from the fact that the Slacker is the starting point of the application's usage, the development and task assignment were a lot easier by narrowing down the scope to the Slackers which led the team to complete the working prototype and the video in time.
- 2. Using Ruby to develop the databse because the database was completed very quickly thanks to the handiness of the language (Deployed on heroku in the first week of November).
- 3. Having a weekly general and team-based meeting because it got the team members to work on the application by asking for progresses and working on the project together in-person. It also allowed the team to finally have a get-together and members got less awkward with each other.
- 4. Having a separate Trello board to keep track of the tasks that needs to be done. This was especially helpful when the team was developing the products because a group of a big size is supposedly hard to coordinate and monitor. However, this was not a big problem thanks to the Trello board letting each team know what they need to do and having each member to take charge of the task if nobody is in charge of it.
+ 1. Implementing and focusing on the Note requester's (a.k.a. Slacker's) portion of the application in order to include in Deliverable 2. Aside from the fact that the Slacker is the starting point of the application's usage, the development and task assignment were a lot easier by narrowing down the scope to the Slackers which led the team to complete the working prototype and the video on time.
+ 2. Using Ruby to develop the database because the database was completed very quickly thanks to the handiness of the language (Deployed on heroku in the first week of November).
+ 3. Each front-end member was assigned a screen that was required for the Slacker's user story. It was a bit worrying at first as the design from one team working on all screens would be more coherent. However the front-end was able to successfully implement their assigned screens and put them together in an in-person meeting. This was highly prioritized due to the video demo required in the second deliverable. See Working Prototype card in Finished Discussing Column: https://trello.com/b/4HBqngjm/iteration-4-meeting-notes
+ 4. Having a weekly general and team-based meeting because it got the team members to work on the application by asking for progresses and working on the project together in-person. It also allowed the team to finally have a get-together and members got less awkward with each other. See November 2nd and October 26th meeting notes for when front-end decided to meet up. https://github.com/csc301-fall-2016/project-team-19/tree/master/meeting_notes
+ 5. Having a separate Trello board to keep track of the tasks that needs to be done. This was especially helpful when the team was developing the products because a group of a big size is supposedly hard to coordinate and monitor. However, this was not a big problem thanks to the Trello board letting each team know what they need to do and having each member to take charge of the task if nobody is in charge of it.
     * Front-end Team's To-do List: https://trello.com/b/K5NMotln/frontend-tasks
     * Back-end Team's To-d- List: https://trello.com/b/fpJuuHce/backend-tasks
- 5. Using the screencapture for the video demo because no actings are required, and most of our team members are terrible actors.
+
+
+
 
 ####Decisions did not turn out as well as you hoped:####
 
- 1. Although back-end team can get the job done and members are learning the Ruby on rails language, the team is highly reliant on sole member when tasks get too complicated.
- 2. We were not able to have a video making session because of coordination problem. As a result, the videographers are reduced down to two members from initial four members but the members still had to work individually.
+ 1. We were not able to have a video making session because of coordination problem. As a result, the videographers are reduced down to two members from initial four members but the members still had to work individually.
+ 2. Although individual assignments of screen responsibility was mostly successful, because of coordination problems one key screen in the user story was left unfinished for the planned deadline. It had to be rushed which is partially responsible for the video demo problems pointed out previously. See Nov 14 commits, which is after the planned deadline for implementing screens: https://github.com/csc301-fall-2016/project-team-19/commits/master 
+ 3. Although back-end team can get the job done and members are learning the Ruby on rails language, the team is highly reliant on sole member when tasks get too complicated. Lowest priority because a robust back-end is not required for the second deliverable.
 
 ####We are planning to make the following change(s) to our process:####
 
  1. We need to have a better coordination scheme moving into the hardest part of the development, especially when the school works will start to pour down on team members. This concern is also signaled by the second decision that did not turn out very well.
-
 
 ## Product - Review
 
@@ -48,4 +51,4 @@ Takeaways after going into the actual development.
 ####Going into the next iteration, our main insights are:####
 
  * We need more effective and efficient ways to make decisions and to get results.
- * Increased responsibility on Front-end team.
+ * Increased responsibility on Front-end team. The team should have caught that a key screen was unimplemented and assigned it right away instead of realizing only when linking the screens together. This will be key in the coming weeks as more user stories are implemented, each necessary screen should be detailed and assigned.

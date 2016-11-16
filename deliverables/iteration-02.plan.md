@@ -1,4 +1,4 @@
-# Notes4U
+﻿# Notes4U
 
 ## Iteration 02
 
@@ -54,7 +54,7 @@ Prioritize the tasks and assign tasks to the team members.
    * During the development, if any issues blocking the progress are raised, that issue will be set with the highest priority (because of the urgency) and will be posted on each team's "To-do list" board in Trello. If there is an incomplete task at hand which was prioritized because it also hindered the team's progress, focus on the initial task and whoever finished their original task will deal with the newly raised issue (FIFO).
    
 * Meeting notes prepared by James
-  * It is a complement for the Trello board because meeting notes are more descriptive. It allows team members to refresh their memories on the tasks that they were assigned to.
+  * Compliment to the trello board. Keeps track more of questions asked and other discussions not represented in the trello board.
   * Lets the team members to keep track of the changes in our priorities.
 
 ## Product

@@ -1,0 +1,6 @@
+Meeting Notes													11/02/2016 
+Backend shows front-end what they’ve done.
+Added backend.pdf in github showing the endpoints they’ve created.
+Discussing video:
+Front end + Eddie and Sunny meeting on friday. Backend members show front end members how to access their data.
+Plan for friday meeting: Split 4 screens between front end members and teach everyone how to parse from JSON object 

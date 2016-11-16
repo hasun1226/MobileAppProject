@@ -1,0 +1,172 @@
+Note: After this meeting I realized most of what I typed would also be on the trello. Meeting notes after this one focus on questions rather than the topic of discussion.
+Meeting Notes 										10/5/2016
+Every group members is responsible for submitting at least one idea for review, each member takes time to read their idea and the team goes through requirements together (user base, etc).
+Eddie is leading discussion
+
+
+Live comments idea: Sunny
+This is a browser add-on for video clips. Comments on a video are timestamped and the highest voted comments are displayed at the time stamp to users of the add-on.
+User base: People who enjoy sharing their viewing experience with others and want to share/view their comments
+
+
+Scheduler: Sunny
+Doodle, except it chooses the time for you (can send everyone available times and the most voted
+User base: This is a feature doodle is missing and sought after by much of the user base
+
+
+Stream server UofT: Kyle
+Video server that different courses can post tutorial videos
+Helps cut back down on office time/tutorial time 
+User base: University students that are studying for midterms/exams
+Sunny question: How is it distinguishable from youtube? Kyle answer: It’s dedicated to university content, it’s not a public platform so only students enrolled in courses can access the videos from the particular course
+Tyler question: Youtube solves the same problem in a more general way? Answer: not yet decided
+
+
+Sharing economy: Eddie
+It’s like uber but for lectures
+You pay for other people to record/take notes in your lecture
+Good idea for students to make money as they do not have much spare time
+User base: Lazy university students and students who need money
+Tyler Question: How are participation marks handled? Eddie answer: It’s more dedicated to courses where the lectures are more focused on taking notes, getting marks for other students is illegal and will not be supported by the app
+
+
+Playlist timer: Tyler
+Add-on that sets a timer on your music and it cuts out after the specified time
+User base: Commuters who risk falling asleep to their music on a train/bus etc.
+
+
+
+
+
+
+
+
+Pet Streamer: Muser
+Streaming service where sheltered dogs are streamed, users can watch and donate on stream to the pets for their living costs
+User base: People who want to own pets but cannot have them in the house due to allergies or other reasons
+Sunny question: How does this handle a problem something like Afreeca/twitch doesn’t?
+Muser answer: Those websites don’t have the credentials to house sheltered dogs, the website is handled more like a charity than a corporation like the aforementioned websites
+
+
+Rant application: James
+Tyler question: What distinguishes this from twitter? James answer: This is more for local issues that you might have trouble finding people that care about it (e.g. 3 lanes blocked on the 404 during rush hour). Tweeting that on twitter might get 1 or 2 retweets but this is an aggregated service for everyone involved in that local issue
+
+
+Source Company Barcode Scanner: Tyler
+Scans barcodes for the big parent company behind the product e.g. Quaker Oats is owned by Nestle
+Maybe can give information about the parent company's’ past transgressions so the user can determine if the company’s practices are against their beliefs
+User base: Vegans/Vegetarians and people who don’t want to support companies with questionable business practices
+Charga question: Can we determine the parent company with just the bar code? James answer: Maybe we can switch it to using the brand?
+
+
+Tinder for introverts: Jimmy
+Self-explanatory
+User Base:For people who want to make friends but are really shy. 
+Charga: What distinguishes this from services like tinder? Answer: This can be more focused on geek culture like video games. When two introverts find a common interest they tend to open up more so this can be the target user base.
+
+
+Community App for Car Enthusiasts: Charga
+Each car community (divided by brands) are usually focused on their own individual forums
+This is a mobile app that gathers communities of car enthusiasts so they can compete/support their brand against other brands. 
+Tyler: Isn’t there a service that already groups communities of car enthusiasts together?
+Charga Answer: Car forums are heavily divided into brands and even individual car models, this is a service that allows them to be competitive and represent their brand against each other.
+User base: Car Enthusiasts
+
+
+DB Class on Android to handle all DB communications
+Framework wrapper over the SQLite library
+Designed for 1st timers, makes it easier to communicate with the database
+User base: Developers who want to utilized the database but do not want to deal with the SQL to access it
+
+
+Voting time!
+Every group member gets 3 votes and votes for their 3 favourite projects
+Sharing economy was picked to be the project!
+
+
+Tech stack discussion:
+Should be implemented as an android app
+Java!
+
+
+Roles and responsibilities:
+People vote on roles and responsibilities that we require
++Front end developer
++Back end developer
++DB designer and developer
++Project manager
++Graphic design?
++Testing team?
++Presenter?
+Written work editor
+
+
+It was noted that written work editor would be the same group as the project manager. Also suggested that we rotate the project manager role so that one person does not get overwhelmed.
+
+
+Meeting discussion
+Charga introducing scrum to the team: Each person tells everyone what they’re currently doing, what they’ll want to do in the feature, basically updating the team on their progress
+Iteration planning meetings every week
+Team leader facilities: What’s the team’s goal for each week, what’s everyone’s individual goal for each week, and any blocks they’re struggling with
+Eddie notes that the team does not check slack enough, check slack more
+Jimmy: Frontend and backend teams should hold meetings of their own to discuss since they’re working on the same block of code, does everyone think this is a good idea?
+Before any work is done, the group should talk about their strengths/where they should work and then the roles are assigned
+Eddie creates slack channel for team roles reaffirms that everyone is checking slack
+
+
+
+
+
+
+Artifacts
+Release plan: Plan for all tasks left undone for a successful product. Lists of tasks for every iteration that we want to accomplish
+Issue tracking - List down bugs that you encounter and need to be fixed
+Back log: List large features that need to be implemented (UI, etc.) and a list of tasks for each feature that also need to be implemented for the feature to be completed
+UI-mockups
+
+
+List of goals for next iteration:
+Run idea with next TA
+Check with TA whether this is our 1st iteration or 1st iteration is next week
+Eddie: If someone needs to get done, then each task should be assigned to a person
+Charga is responsible for asking TA about above
+Release plan is decided after approval from TA
+Release meeting date is decided to be october 15th after 4pm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+Meeting Notes									10/26/2016                   
+
+
+Eddie explains front-end/back-end login verification
+Send Post-Request and Login/Password
+Server responds with authentication token
+Front-end saves authentication token until logout, then it is deleted
+
+
+Agree on login and E-mail
+Agreed on Email is login ID, have separate display ID when communicating with other users
+
+
+Notifications
+You have been selected as note taker
+Your note taking request has been responded too
+Your note has been completed and will be uploaded
+
+
+Question: Do we have slackers input free time or select from their course load
+We decided on selecting from only the courses you are taking
+We load in the course calendar for the user to choose
+Should we include lecture session? 
+Eddie: Don’t include lecture session, just need course room and time and choose from list of course codes
+
+
+Discuss front-end tasks?
+Decided to have separate meeting on Nov 4.
+
+
+How does front end startup the server for testing?
+Eddie will have server to access by Friday
+
+
+Decided on weekly meetings
+Front end-group and back-end group picks one representative to go over what the team has done that week
