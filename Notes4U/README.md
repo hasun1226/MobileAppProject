@@ -4,8 +4,8 @@
 
 #### Slacker's portion of Notes4U
 
-* Start page: Muser
-* Login page: Jimmy
-* Post requests page: Charga
-* View Slacker's requests page: Tyler
-* View the Notetaker's profile page: James
+* [Start page](https://github.com/csc301-fall-2016/project-team-19/blob/master/Notes4U/app/src/main/java/team19/notes4u/StartActivity.java): Muser
+* [Login page](https://github.com/csc301-fall-2016/project-team-19/blob/master/Notes4U/app/src/main/java/team19/notes4u/LoginActivity.java): Jimmy
+* [Post requests page](https://github.com/csc301-fall-2016/project-team-19/blob/master/Notes4U/app/src/main/java/team19/notes4u/PostActivity.java): Charga
+* [View Slacker's requests page](https://github.com/csc301-fall-2016/project-team-19/blob/master/Notes4U/app/src/main/java/team19/notes4u/ViewSlackRequestsActivity.java): Tyler
+* [View the Notetaker's profile page](https://github.com/csc301-fall-2016/project-team-19/blob/master/Notes4U/app/src/main/java/team19/notes4u/ProfileActivity.java): James
