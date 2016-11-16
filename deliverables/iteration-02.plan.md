@@ -40,19 +40,19 @@
 
 #### Events
 
-* "General Team Meeting" every Wednesday 11PM on Google Hangout
-   * Discuss weekly progresses between the teams; front-end, back-end, UI designer. It allows the members to hold accountability to fulfilling their respective tasks.
-   * Discuss the newly emerged tasks during the process or the tasks that are complete.
+* "General Team Meeting" every Wednesday 11PM on Google Hangouts
+   * We have a weekly meeting on Google Hangouts to discuss each teams' progress: front-end, back-end, UI designer. This meeting allows the team to hold each other accountable to fulfilling their respective tasks, and to determine whether or not we are on track to completion.
+   * We also discuss any newly emerged tasks we've uncovered and try to resolve any questions we have had during the iteration.
 
-* "Back-end team meeting" every Wednesday 5PM in-person
-   * Develop the databases for the Application, and while doing so, many of the back-end team members who are not familiar with the Ruby language can learn the language together.
-   * After some discussion, the team members can go to the TA's office hour (7PM-8PM) if there are any questions that need to be answered.
+* "Back-end Team Meeting" every Wednesday 5PM in-person
+   * The back-end team meets weekly to implement functionality for Note4U's back-end API. The reason why the team meets as a group is so that the team members who are not as familiar with Ruby on Rails can learn the framework together.
 
-* "Front-end team meeting" every Friday 6PM in-person
-  * Develop the pages for the Application and link the pages with each other as each team member is responsible for each page.
+* "Front-end Team Meeting" every Friday 6PM in-person
+  * The front-end team meets weekly to implement pages specified by the UI Designer.
+  * Furthermore, the team meets in-person to coordinate the linking of each page to each other since each member of the front-end team is responsible for a separate page.
 
-* "Video making session"
-   * Make a video that captures the Application process from user login to requesting for notes.
+* "Video-making Session" Sunday Nov. 13, 2016
+   * Sunny and Muser met to work on the video demo for the second deliverable.
 
 #### Artifacts
 
