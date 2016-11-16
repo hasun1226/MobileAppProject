@@ -29,7 +29,7 @@ Takeaways after going into the actual development.
 ####Decisions did not turn out as well as you hoped:####
 
  1. Front-end team's tasks were completed but the completion was delayed after the initial deadline. This is the most important decision that we need to worry about because it shows that our scheduling isn't working perfectly for the project that has a set deadline and it might risk the team to rush the whole project in the end.
- 2. There was a missing component of the tasks in the front-end team. The menu page which is a transitory page for the application was not assigned to any member and the team realized that this screen was unimplemented only after we were linking the screens together. This will become more important in the coming weeks as more user stories are implemented, and each necessary screen should be detailed and assigned for the completion of the project.
+ 2. There was a missing component of the tasks in the front-end team. The [menu page](https://github.com/csc301-fall-2016/project-team-19/blob/master/Notes4U/app/src/main/java/team19/notes4u/MainActivity.java) which is a transitory page for the application was not assigned to any member and the team realized that this screen was unimplemented only after we were linking the screens together. This will become more important in the coming weeks as more user stories are implemented, and each necessary screen should be detailed and assigned for the completion of the project.
  3. We were not able to have a video making session because of coordination problem. As a result, the videographers are reduced down to two members from initial four members but the members still had to work individually.
  4. Although back-end team can get the job done and members are learning the Ruby on rails language, the team is highly reliant on sole member when tasks get too complicated. This decision has the lowest value because a robust back-end is not required for the second deliverable.
 
@@ -50,7 +50,7 @@ Takeaways after going into the actual development.
 
 ####Goals/tasks that were planned but not met/completed:####
 
- 1. A page for posting requests is not quite finished yet because of the connection error to the database. We are still trying to figure out what the problem is even after having four members of the team working on it.
+ 1. A page for [posting requests](https://github.com/csc301-fall-2016/project-team-19/blob/master/Notes4U/app/src/main/java/team19/notes4u/PostActivity.java) is not quite finished yet because of the connection error to the database. We are still trying to figure out what the problem is even after having four members of the team working on it.
  2. This was not part of the task in Iteration-plan, and thus the lower importance, but back-end team is trying to figure out how to make the routing for nested resources to work. This has turned out to be difficult because majority of the back-end team members are not quite proficient in Ruby on rails language.
 
 
