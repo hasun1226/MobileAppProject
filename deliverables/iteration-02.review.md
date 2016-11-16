@@ -12,10 +12,14 @@ Takeaways after going into the actual development.
 ####Decisions turned out well:####
 
  1. Implementing and focusing on the Note requester's (a.k.a. Slacker's) portion of the application in order to include in Deliverable 2. Aside from the fact that the Slacker is the starting point of the application's usage, the development and task assignment were a lot easier by narrowing down the scope to the Slackers which led the team to complete the working prototype and the video on time.
- 2. Using Ruby to develop the database because the database was completed very quickly thanks to the handiness of the language (Deployed on heroku in the first week of November).
- 3. Each front-end member was assigned a screen that was required for the Slacker's user story. It was a bit worrying at first as the design from one team working on all screens would be more coherent. However the front-end was able to successfully implement their assigned screens and put them together in an in-person meeting. This was highly prioritized due to the video demo required in the second deliverable. See Working Prototype card in Finished Discussing Column: https://trello.com/b/4HBqngjm/iteration-4-meeting-notes
- 4. Having a weekly general and team-based meeting because it got the team members to work on the application by asking for progresses and working on the project together in-person. It also allowed the team to finally have a get-together and members got less awkward with each other. See November 2nd and October 26th meeting notes for when front-end decided to meet up. https://github.com/csc301-fall-2016/project-team-19/tree/master/meeting_notes
- 5. Having a separate Trello board to keep track of the tasks that needs to be done. This was especially helpful when the team was developing the products because a group of a big size is supposedly hard to coordinate and monitor. However, this was not a big problem thanks to the Trello board letting each team know what they need to do and having each member to take charge of the task if nobody is in charge of it.
+ 2. Having a weekly general and team-based meeting because it got the team members to work on the application by asking for progresses and working on the project together in-person. It also allowed the team to finally have a get-together and members got less awkward with each other. This decision is highly prioritized due to letting the team reach our goals on a constant base.
+    * [Meeting notes](https://github.com/csc301-fall-2016/project-team-19/tree/master/meeting_notes)
+    * [Oct. 26th General meeting](https://trello.com/b/DNriMWwi/iteration-3-meeting-notes)
+    * [Nov. 2nd General meeting](https://trello.com/b/4HBqngjm/iteration-4-meeting-notes)
+    * [Nov. 9th General meeting](https://trello.com/b/pA00rNHs/iteration-meeting-5)
+ 3. Using Ruby to develop the database because the database was completed very quickly thanks to the handiness of the language (Deployed on heroku in the first week of November). Being able to deploy the database quickly allowed the front-end team to work on the prototype early.
+ 4. Each front-end member being assigned to a screen that was required for the Slacker's user story. After the database was launched, front-end team members could divide-and-conquer the works according to the screens. It saved a lot of time when trying to meet the goal without sacrificing the coherence of the application. This is prioritized after the back-end team's decision because front-end team's tasks were only possible after the back-end team's tasks for debugging purposes.
+ 5. Having a separate Trello board to keep track of the tasks that needs to be done. This was especially helpful when the team was developing the products because a group of a big size is supposedly hard to coordinate and monitor. However, this was not a big problem thanks to the Trello board keeping each team know what they need to do and having each member to take charge of the task if nobody is in charge of it.
     * Front-end Team's To-do List: https://trello.com/b/K5NMotln/frontend-tasks
     * Back-end Team's To-d- List: https://trello.com/b/fpJuuHce/backend-tasks
 
@@ -24,13 +28,15 @@ Takeaways after going into the actual development.
 
 ####Decisions did not turn out as well as you hoped:####
 
- 1. We were not able to have a video making session because of coordination problem. As a result, the videographers are reduced down to two members from initial four members but the members still had to work individually.
- 2. Although individual assignments of screen responsibility was mostly successful, because of coordination problems one key screen in the user story was left unfinished for the planned deadline. It had to be rushed which is partially responsible for the video demo problems pointed out previously. See Nov 14 commits, which is after the planned deadline for implementing screens: https://github.com/csc301-fall-2016/project-team-19/commits/master 
- 3. Although back-end team can get the job done and members are learning the Ruby on rails language, the team is highly reliant on sole member when tasks get too complicated. Lowest priority because a robust back-end is not required for the second deliverable.
+ 1. Front-end team's tasks were completed but the completion was delayed after the initial deadline. This is the most important decision that we need to worry about because it shows that our scheduling isn't working perfectly for the project that has a set deadline and it might risk the team to rush the whole project in the end.
+ 2. There was a missing component of the tasks in the front-end team. The menu page which is a transitory page for the application was not assigned to any member and the team realized that this screen was unimplemented only after we were linking the screens together. This will become more important in the coming weeks as more user stories are implemented, and each necessary screen should be detailed and assigned for the completion of the project.
+ 3. We were not able to have a video making session because of coordination problem. As a result, the videographers are reduced down to two members from initial four members but the members still had to work individually.
+ 4. Although back-end team can get the job done and members are learning the Ruby on rails language, the team is highly reliant on sole member when tasks get too complicated. This decision has the lowest value because a robust back-end is not required for the second deliverable.
 
 ####We are planning to make the following change(s) to our process:####
 
- 1. We need to have a better coordination scheme moving into the hardest part of the development, especially when the school works will start to pour down on team members. This concern is also signaled by the second decision that did not turn out very well.
+ 1. We need to have a better coordination scheme moving into the hardest part of the development, especially when the school works will start to pour down on team members. This concern is also signaled by the first and third decision that did not turn out very well. Once we have a better scheduling and coordination schemes, many of the unnoticed failures can be mitigated.
+ 2. Continue with the divide-and-conquer system, but make sure that the list of tasks are complete through dynamic and thorough process. (i.e. In case the task list prepared at the beginning of the iteration, keep coming back to the task list to find if there are anything missing and assign them if any)
 
 ## Product - Review
 
@@ -51,4 +57,4 @@ Takeaways after going into the actual development.
 ####Going into the next iteration, our main insights are:####
 
  * We need more effective and efficient ways to make decisions and to get results.
- * Increased responsibility on Front-end team. The team should have caught that a key screen was unimplemented and assigned it right away instead of realizing only when linking the screens together. This will be key in the coming weeks as more user stories are implemented, each necessary screen should be detailed and assigned.
+ * Increased responsibility on Front-end team, so less boundary between the team may be required.
