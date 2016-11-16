@@ -7,28 +7,36 @@
 
 ## Process
 
-Prioritize the tasks and assign tasks to the team members.
+**Important Note:** The Github repository for the back-end server is currently hosted on https://github.com/eddiequan/notes4u_server. We separated the back-end code from the rest of the repository to make deployments to Heroku easier.
 
 #### Roles & responsibilities
 
-* UI designer: Muser
-   * Design the structure of User Interface and present it to the developers.
-   * Design the graphical items to be used in the Application such as Application logo or background image.
+* UI Designer: Muser
+   * Designs the structure of user interface and presents it to the developers (via mockups or verbally).
+   * Designs the graphics for the application such as the logo or background images.
 
-* Back-end developers: Eddie, Kyle, Sunny
-   * Develop the database which the Application will sit on.
-   * Deploy, maintain the server that keeps the database and deliver the necessary information to the front-end developers.
+* Back-end Developers: Eddie, Kyle, Sunny
+   * Develops the back-end API which the front-end Android client will rely on for data fetching and persistence.
+   * Deploys and maintains the back-end application.
+   * Implements custom endpoints that the front-end client requires (e.g. calculating the average rating for a NoteTaker).
    
-* Front-end developers: Charga, James, Jimmy, Muser, Tyler
-   * Develop the pages with Android Studio so that the Application handles the client-server interactions.
-   * Coordinate the pages according to the layouts specified by the UI designer and the structure of database.
+* Front-end Developers: Charga, James, Jimmy, Muser, Tyler
+   * Implements the workflows specified by the UI designer for our Android front-end.
+   * Adds styling and markup to the front-end application to make it conform to the UI designer's specifications.
    
 * Videographers: Muser, Sunny
-   * Make a video demo with the working prototype of the Application.
-   * Write out the necessary scripts and outline of the video so that the video using screen capture can present our Application’s working prototype efficiently.
+   * Creates a video demo with the working prototype of our application.
+   * Creates an outline for the video structure.
+   * Drafts and proofreads the script for the video so that our complete user journey is showcased in a clear and concise fashion.
    
 * Notetaker: James
-  * Take meeting notes for future reference.
+  * Takes meeting minutes during meetings.
+  
+* Meeting Facilitator: Kyle, Charga
+  * Facilitates meetings, ensures that all the questions we had going into the meeting are either resolved or can be actioned upon.
+  
+* Written Work Editors: Sunny, James
+    * Proofreads written deliverables.
 
 #### Events
 
@@ -63,7 +71,7 @@ Prioritize the tasks and assign tasks to the team members.
 
 ### Goals and tasks:
 
-1. Develop Note requester’s (a.k.a. Slacker’s) portion of the Application.
+1. Implement a complete user journey for the Note requester’s (a.k.a. Slacker’s) portion of the Application.
    1. Now that we have the User Interface laid out, deploying the database server so that it can be accessible to the team is the top-priority because the front-end team cannot test their codes without the working database.
    2. Each of the front-end team members implements each page of the application: user login, posting a request for note, viewing the slacker's requests, and viewing the Not takers' profiles.
    3. Link individual pages with each other after all the pages are implemented.
