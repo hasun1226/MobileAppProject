@@ -79,7 +79,7 @@
 
 ### Goals and tasks:
 
-1. Implement a complete user journey for the note requester’s (a.k.a. Slacker’s) portion of the application.
+1. Implement the primary user journey (a user logs in, requests notes for a certain class, and gets a response from a NoteTaker) for the note requester’s (a.k.a. Slacker’s) portion of the application.
    1. Deploy a back-end application.
    1. Implement the required entities for the user journey in the back-end.
    1. Split each page in the UI to be a separate task for the Front-end team:
@@ -98,9 +98,9 @@
 
 ### Artifacts
 
-* Databases for Users, Requests, Replies, Ratings on heroku
-* Actual codes for Application pages that can be emulated on Android Studio.
-  * Pages include pages for Login, Posting requests, Viewing their requests, Viewing the Note taker profiles.
-* Video of the Note4U's primary user journey (a user logs in, requests notes for a certain class, and gets a response from a NoteTaker).
-* Scripts of the video demo so that Videographers can make the video demo correspondingly.
+* A deployed API for Users, Requests, Replies, Ratings on Heroku.
+* A functional, emulatable Android application with the pages required in the primary user journey implemented.
+  * Pages include: Login, Posting Requests, Viewing Requests, Viewing User Profiles.
+* Video demo of the Note4U's primary user journey.
+* Script for the video demo so that the Videographers can make the video demo correspondingly.
 
