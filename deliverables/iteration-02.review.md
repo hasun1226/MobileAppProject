@@ -51,7 +51,7 @@ Takeaways after going into the actual development.
 ####Goals/tasks that were planned but not met/completed:####
 
  1. A page for [posting requests](https://github.com/csc301-fall-2016/project-team-19/blob/master/Notes4U/app/src/main/java/team19/notes4u/PostActivity.java) is not quite finished yet because of the connection error to the database. We are still trying to figure out what the problem is even after having four members of the team working on it.
- 2. This was not part of the task in Iteration-plan, and thus the lower importance, but back-end team is trying to figure out how to make the routing for nested resources to work. This has turned out to be difficult because majority of the back-end team members are not quite proficient in Ruby on rails language.
+ 2. This was not part of the task in Iteration-plan, and thus the lower importance, but back-end team is trying to figure out how to make the routing for nested resources to work. This has turned out to be difficult because majority of the back-end team members are not quite proficient in Ruby on rails language. (i.e. [requests associated with user with id 1](http://notes4u.herokuapp.com/users/1/requests) is showing all the requests in the database)
 
 
 ####Going into the next iteration, our main insights are:####
