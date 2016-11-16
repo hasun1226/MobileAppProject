@@ -12,7 +12,7 @@ Takeaways after going into the actual development.
 ####Decisions turned out well:####
 
  1. Implementing and focusing on the Note requester's (a.k.a. Slacker's) portion of the application in order to include in Deliverable 2. Aside from the fact that the Slacker is the starting point of the application's usage, the development and task assignment were a lot easier by narrowing down the scope to the Slackers which led the team to complete the working prototype and the video on time.
- 2. Having a weekly general and team-based meeting because it got the team members to work on the application by asking for progresses and working on the project together in-person. It also allowed the team to finally have a get-together and members got less awkward with each other. This decision is highly prioritized due to letting the team reach our goals on a constant base.
+ 2. Having a weekly general and team-based meeting because it got the team members to work on the application by asking for progresses and working on the project together in-person. It also allowed the team to finally have a get-together and members got less awkward with each other. This decision is highly prioritized due to letting the team reach our goals on a consistent basis.
     * [Meeting notes](https://github.com/csc301-fall-2016/project-team-19/tree/master/meeting_notes)
     * [Oct. 26th General meeting](https://trello.com/b/DNriMWwi/iteration-3-meeting-notes)
     * [Nov. 2nd General meeting](https://trello.com/b/4HBqngjm/iteration-4-meeting-notes)
@@ -21,7 +21,7 @@ Takeaways after going into the actual development.
  4. Each front-end member being assigned to a screen that was required for the Slacker's user story. After the database was launched, front-end team members could divide-and-conquer the works according to the screens. It saved a lot of time when trying to meet the goal without sacrificing the coherence of the application. This is prioritized after the back-end team's decision because front-end team's tasks were only possible after the back-end team's tasks for debugging purposes. See [Note4U responsibilities](https://github.com/csc301-fall-2016/project-team-19/tree/master/Notes4U) for how the tasks were divided.
  5. Having a separate Trello board to keep track of the tasks that needs to be done. This was especially helpful when the team was developing the products because a group of a big size is supposedly hard to coordinate and monitor. However, this was not a big problem thanks to the Trello board keeping each team know what they need to do and having each member to take charge of the task if nobody is in charge of it.
     * Front-end Team's To-do List: https://trello.com/b/K5NMotln/frontend-tasks
-    * Back-end Team's To-d- List: https://trello.com/b/fpJuuHce/backend-tasks
+    * Back-end Team's To-do- List: https://trello.com/b/fpJuuHce/backend-tasks
 
 
 
@@ -37,12 +37,12 @@ Takeaways after going into the actual development.
 
  1. We need to have a better coordination scheme moving into the hardest part of the development, especially when the school works will start to pour down on team members. This concern is also signaled by the first and third decision that did not turn out very well. Once we have a better scheduling and coordination schemes, many of the unnoticed failures can be mitigated.
  2. Continue with the divide-and-conquer system, but make sure that the list of tasks are complete through dynamic and thorough process. (i.e. In case the task list prepared at the beginning of the iteration, keep coming back to the task list to find if there are anything missing and assign them if any)
-
+ 3. Make a better effort to learn about tools the team is using in the application as to not overly rely on core members to get necessary work done, as shown in the fourth decision above.
 ## Product - Review
 
 ####Goals/tasks that were met/completed:####
 
- 1. Actual codes for Application pages that can be emulated on Android Studio: [Notes4U](https://github.com/csc301-fall-2016/project-team-19/tree/master/Notes4U).
+ 1. Actual code for Application pages that can be emulated on Android Studio: [Notes4U](https://github.com/csc301-fall-2016/project-team-19/tree/master/Notes4U).
  2. Databases for Users, Requests, Replies on heroku: http://notes4u.herokuapp.com/
  3. [Video demo](https://github.com/csc301-fall-2016/project-team-19/blob/master/deliverables/videodemofinal.mp4).
  4. [Scripts](https://github.com/csc301-fall-2016/project-team-19/blob/master/artifacts/script.txt) of the video demo.
@@ -55,6 +55,6 @@ Takeaways after going into the actual development.
 
 
 ####Going into the next iteration, our main insights are:####
-
+ * Figure out the features that need to be implemented as to get the MVP done before the live demo date
  * We need more effective and efficient ways to make decisions and to get results.
  * Increased responsibility on Front-end team, so less boundary between the team may be required.
