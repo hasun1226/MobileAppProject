@@ -52,10 +52,12 @@ Prioritize the tasks and assign tasks to the team members.
    * Prepared during the General Team meeting (every Wednesday on Google Hangout). Using Trello board because it has functions to set the priorities with the color and can easily move around the tasks from the to-do category to completed category and vice versa.
    * We would have prioritized the tasks over the urgency of the task (determined by whether or not the task prevents the team's progress), then the value of the task (aligned with the Product Goals). However, after laying out all the tasks with the highest urgency, we didn't have to compare the tasks with the same value because we had enough members to take on the tasks with the same urgency. 
    * During the development, if any issues blocking the progress are raised, that issue will be set with the highest priority (because of the urgency) and will be posted on each team's "To-do list" board in Trello. If there is an incomplete task at hand which was prioritized because it also hindered the team's progress, focus on the initial task and whoever finished their original task will deal with the newly raised issue (FIFO).
+   * Front-end team's trello board: https://trello.com/b/K5NMotln/frontend-tasks
+   * Back-end team's trello board: https://trello.com/b/fpJuuHce/backend-tasks
    
-* Meeting notes prepared by James
-  * Compliment to the trello board. Keeps track more of questions asked and other discussions not represented in the trello board.
-  * Lets the team members to keep track of the changes in our priorities.
+* [Meeting notes](https://github.com/csc301-fall-2016/project-team-19/tree/master/meeting_notes) prepared by James
+  * Complement to the trello board that keeps track of questions asked and other discussions not represented in the trello board.
+  * It also lets the team members to keep track of the changes in our priorities.
 
 ## Product
 
