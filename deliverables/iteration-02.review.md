@@ -51,7 +51,7 @@ Takeaways after going into the actual development.
 ####Goals/tasks that were planned but not met/completed:####
 
  1. A page for posting requests is not quite finished yet because of the connection error to the database. We are still trying to figure out what the problem is even after having four members of the team working on it.
- 2. This was not part of the task in Iteration-plan, but back-end team is trying to figure out how to make the routing for nested resources to work. This has turned out to be difficult because majority of the back-end team members are not quite proficient in Ruby on rails language.
+ 2. This was not part of the task in Iteration-plan, and thus the lower importance, but back-end team is trying to figure out how to make the routing for nested resources to work. This has turned out to be difficult because majority of the back-end team members are not quite proficient in Ruby on rails language.
 
 
 ####Going into the next iteration, our main insights are:####
