@@ -56,10 +56,14 @@
 
 #### Artifacts
 
-* To-do list using Trello
-   * Prepared during the General Team meeting (every Wednesday on Google Hangout). Using Trello board because it has functions to set the priorities with the color and can easily move around the tasks from the to-do category to completed category and vice versa.
-   * We would have prioritized the tasks over the urgency of the task (determined by whether or not the task prevents the team's progress), then the value of the task (aligned with the Product Goals). However, after laying out all the tasks with the highest urgency, we didn't have to compare the tasks with the same value because we had enough members to take on the tasks with the same urgency. 
-   * During the development, if any issues blocking the progress are raised, that issue will be set with the highest priority (because of the urgency) and will be posted on each team's "To-do list" board in Trello. If there is an incomplete task at hand which was prioritized because it also hindered the team's progress, focus on the initial task and whoever finished their original task will deal with the newly raised issue (FIFO).
+* To-do lists using Trello
+   * These are prepared during the General Team meeting (every Wednesday on Google Hangout). We are using Trello boards to track tasks because Trello allows users to label cards by priority and easily move tasks between task lists. Overall we found that it was a lightweight, and flexible solution that didn't add too much overhead to our process.
+   * We prioritize tasks using colour scheme - red, yellow, green depending on urgency.
+      * Red (most urgent) usually indicates that a task is blocking another team member from making progress.
+      * Yellow (medium urgency) indicates tasks that definitely need to get done by the next General Meeting.
+      * Green (least urgent) usually indicate "nice-to-haves".
+   * We found that we didn't need any further granularity within the three colours (i.e. adding a priority to each "red" card to see which task needs to be finished first) as we had enough team members to ensure that all high-priority tasks were taken on immediately.
+   * During development, if any issues blocking progress are raised, that issue will be set with the highest priority and will be posted on each team's "To-do list" board in Trello. If there is an incomplete task at hand which was prioritized because it also hindered the team's progress, focus on the initial task and whoever finished their original task will deal with the newly raised issue (FIFO).
    * Front-end team's trello board: https://trello.com/b/K5NMotln/frontend-tasks
    * Back-end team's trello board: https://trello.com/b/fpJuuHce/backend-tasks
    
@@ -67,20 +71,29 @@
   * Complement to the trello board that keeps track of questions asked and other discussions not represented in the trello board.
   * It also lets the team members to keep track of the changes in our priorities.
 
+* Meeting Notes on Trello
+  * We track the discussion points we have on each Weekly General Meeting in separate Trello boards.
+    * https://trello.com/team19104
+
 ## Product
 
 ### Goals and tasks:
 
-1. Implement a complete user journey for the Note requester’s (a.k.a. Slacker’s) portion of the Application.
-   1. Now that we have the User Interface laid out, deploying the database server so that it can be accessible to the team is the top-priority because the front-end team cannot test their codes without the working database.
-   2. Each of the front-end team members implements each page of the application: user login, posting a request for note, viewing the slacker's requests, and viewing the Not takers' profiles.
-   3. Link individual pages with each other after all the pages are implemented.
-   4. Having a logo and background image for the Application is solely for the aesthetics of the Application, so it has the lowest priority.
+1. Implement a complete user journey for the note requester’s (a.k.a. Slacker’s) portion of the application.
+   1. Deploy a back-end application.
+   1. Implement the required entities for the user journey in the back-end.
+   1. Split each page in the UI to be a separate task for the Front-end team:
+      1. User Login
+      1. Posting a Note Request
+      1. Viewing Your Posted Requests
+      1. Viewing a Note-Taker's Profile
+    1. Link each page together.
+    1. Add styling and graphics to the application to make it look nice.
 
-2. Make a video demo that captures the core features of the Application.
-   1. Capture the necessary screens of the Application to present in the video so that the videographers can edit and make a script depending on the screenshots.
-   2. Write a narrative script and make sure it fits into 3 minutes.
-   3. Edit the video to make the video run in 3 minutes, and add the narrations and subtitles.
+2. Create a video demo that captures the core features of the application.
+   1. Capture footage of Notes4U going through the primary user journey.
+   2. Write a narrative script for the video.
+   3. Edit the video to ensure the runtime is under 3 minutes, and add the narration and captions.
 
 
 ### Artifacts
@@ -88,6 +101,6 @@
 * Databases for Users, Requests, Replies, Ratings on heroku
 * Actual codes for Application pages that can be emulated on Android Studio.
   * Pages include pages for Login, Posting requests, Viewing their requests, Viewing the Note taker profiles.
-* Video of the Application's functionalities which is to be submitted for Deliverable 2.
+* Video of the Note4U's primary user journey (a user logs in, requests notes for a certain class, and gets a response from a NoteTaker).
 * Scripts of the video demo so that Videographers can make the video demo correspondingly.
 
