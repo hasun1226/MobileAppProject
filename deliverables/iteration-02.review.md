@@ -36,7 +36,7 @@ Takeaways after going into the actual development.
 
  1. We need to have a better coordination scheme moving into the hardest part of the development, especially when the school works will start to pour down on team members. This concern is also signaled by the first and third decision that did not turn out very well. Once we have a better scheduling and coordination schemes, many of the unnoticed failures can be mitigated. We will find a suitable application that helps us with coordinating meetings of members (i.e. doodle). 
  2. Continue with the divide-and-conquer system, but make sure that the list of tasks are complete through dynamic and thorough process. (i.e. In case the task list prepared at the beginning of the iteration, keep coming back to the task list to find if there are anything missing and assign them if any)
- 3. Make a better effort to learn about tools the team is using in the application as to not overly rely on core members to get necessary work done, as shown in the fourth decision above.
+ 
  
 ## Product - Review
 
@@ -55,6 +55,6 @@ Takeaways after going into the actual development.
 
 
 ####Going into the next iteration, our main insights are:####
- * Figure out the features that need to be implemented as to get the MVP done before the live demo date
+ * Figure out the features that need to be implemented as to get the MVP done before the live demo date. Having a meeting on  renewing the to-do lists would be important. 
  * We need more effective and efficient ways to make decisions and to get results.
  * Increased responsibility on Front-end team, so less boundary between the team may be required.
