@@ -62,8 +62,7 @@
       * Red (most urgent) usually indicates that a task is blocking another team member from making progress.
       * Yellow (medium urgency) indicates tasks that definitely need to get done by the next General Meeting.
       * Green (least urgent) usually indicate "nice-to-haves".
-   * We found that we didn't need any further granularity within the three colours (i.e. adding a priority to each "red" card to see which task needs to be finished first) as we had enough team members to ensure that all high-priority tasks were taken on immediately.
-   * During development, if any issues blocking progress are raised, that issue will be set with the highest priority and will be posted on each team's "To-do list" board in Trello. If there is an incomplete task at hand which was prioritized because it also hindered the team's progress, focus on the initial task and whoever finished their original task will deal with the newly raised issue (FIFO).
+   * We found that we didn't need any further granularity within the three colours (i.e. adding a priority to each "red" card to see which task needs to be finished first) as we had enough team members to ensure that all high-priority tasks were taken on immediately. During development, if any issues blocking progress are raised, that issue will be set with the highest priority and will be posted on each team's "To-do list" board in Trello. If there is an incomplete task at hand which was prioritized because it also hindered the team's progress, focus on the initial task and whoever finished their original task will deal with the newly raised issue (FIFO).
    * Front-end team's trello board: https://trello.com/b/K5NMotln/frontend-tasks
    * Back-end team's trello board: https://trello.com/b/fpJuuHce/backend-tasks
    
