@@ -11,5 +11,5 @@
 * [View the Notetaker's profile page](https://github.com/csc301-fall-2016/project-team-19/blob/master/Notes4U/app/src/main/java/team19/notes4u/ProfileActivity.java): James
 
 
-#### [Notes4U server](https://github.com/eddiequan/notes4u_server)
+#### Notes4U server[WIP repo](https://github.com/eddiequan/notes4u_server)
 * [Database](http://notes4u.herokuapp.com)
