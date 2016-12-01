@@ -138,18 +138,22 @@ public class MainActivity extends AppCompatActivity
             intent.putExtra("user", user_id);
             startActivity(intent);
         } else if (id == R.id.notetake) {
+            Intent intent = new Intent(MainActivity.this, TakeNotesActivity.class);
+            intent.putExtra("username", user_name);
+            intent.putExtra("user", user_id);
+            startActivity(intent);
 
-        } else if (id == R.id.profile) {
-
-        } else if (id == R.id.settings) {
+        } else if (id == R.id.my_profile) {
 
         } else if (id == R.id.view_my_request) {
             Intent intent = new Intent(MainActivity.this, ViewSlackRequestsActivity.class);
             intent.putExtra("user", user_id);
             startActivity(intent);
 
-        } else if (id == R.id.view_notetakes) {
-
+        } else if (id == R.id.view_pending) {
+            Intent intent = new Intent(MainActivity.this, ViewPendingActivity.class);
+            intent.putExtra("user", user_id);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

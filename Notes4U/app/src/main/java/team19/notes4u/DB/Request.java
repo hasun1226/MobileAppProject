@@ -11,6 +11,11 @@ public class Request {
     private String course;
     private String datetime;
     private String location;
+    private String status;
+
+    public enum STATUS{
+        UNACCEPTED, PENDING, ACCEPTED
+    }
 
     public String getId() {
         return id;
@@ -50,6 +55,24 @@ public class Request {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getStatus(){
+        return this.status;
+    }
+
+    public static String changeStatus(String status) {
+        if(status.equals("0"))
+            return "Unaccepted";
+        if(status.equals("1"))
+            return "Pending";
+        if(status.equals("2"))
+            return "Accepted";
+        return "N/A";
+    }
+
+    public void setStatus(String status){
+        this.status = status;
     }
 
     @Override

@@ -3,23 +3,20 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/my_profile"
+            android:title="Profile" />
+        <item
             android:id="@+id/post_request"
             android:title="Post Request" />
         <item
             android:id="@+id/notetake"
-            android:title="Notetake Now" />
+            android:title="Take Notes" />
         <item
-            android:id="@+id/profile"
-            android:title="Profile" />
-        <item
-            android:id="@+id/settings"
-            android:title="Settings" />
+            android:id="@+id/view_pending"
+            android:title="View Pending Notetaker Requests" />
         <item
             android:id="@+id/view_my_request"
-            android:title="View my Requests" />
-        <item
-            android:id="@+id/view_notetakes"
-            android:title="Recently viewed Request" />
+            android:title="View My Requests for Notes" />
     </group>
 
 </menu>

@@ -1,44 +1,39 @@
 package team19.notes4u;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import java.util.List;
-import java.util.ArrayList;
-import android.widget.AdapterView.OnItemClickListener;
-
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import team19.notes4u.DB.Wrapper;
-import team19.notes4u.DB.Request;
+import java.util.ArrayList;
+import java.util.List;
 
+import team19.notes4u.DB.Course;
+import team19.notes4u.DB.Request;
+import team19.notes4u.DB.Wrapper;
 import team19.notes4u.adapter.ListViewRequestAdapter;
 
-/**
- * Created by tyler on 09/11/16.
- */
+import team19.notes4u.DB.StatusIdToStatus.STATUS;
 
-public class ViewSlackRequestsActivity extends AppCompatActivity {
-
+public class TakeNotesActivity extends AppCompatActivity {
 
     String user;
 
-    //parallel arrays
-    //requestString: arrayList of the requests in a humanreadable format
-    //requests arrayList of the request objects
     List<Request> requests = new ArrayList<Request>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_slack_requests);
-        setTitle("Slack Requests");
+        setContentView(R.layout.activity_take_notes);
+        setTitle("Take Notes Requests");
 
         //allows access to passed on activity variables
         Bundle extras = getIntent().getExtras();
@@ -51,12 +46,10 @@ public class ViewSlackRequestsActivity extends AppCompatActivity {
             System.out.println("Couldn't get user id defaulting to 1");
         }
 
-        populateSlackRequests(user);
-
+        populateTakeNotesRequests(user);
     }
 
-    //        TODO: Find out how to get user id
-    private void populateSlackRequests(String user_id){
+    private void populateTakeNotesRequests(String user) {
         new DownloadRequestList().execute();
     }
 
@@ -68,8 +61,8 @@ public class ViewSlackRequestsActivity extends AppCompatActivity {
             //        http://notes4u.herokuapp.com/users/1/requests
 //        format: 'users' + userid + '/requests'
 
-            String connectionString = ("users/" + user + "/requests");
-            Wrapper wrapper = new Wrapper(connectionString);
+            String connectionStringRequests = ("users/" + user + "/requests");
+            Wrapper wrapper = new Wrapper(connectionStringRequests);
 
 //        Object[] request_array = wrapper.getJsonObjects();
 
@@ -95,7 +88,8 @@ public class ViewSlackRequestsActivity extends AppCompatActivity {
                     System.out.println(e.getMessage());
                     e.printStackTrace();
                 }
-                requests.add(r);
+                if(Integer.parseInt(r.getStatus()) != STATUS.ACCEPTED.ordinal())
+                    requests.add(r);
             }
             return null;
         }
@@ -105,20 +99,33 @@ public class ViewSlackRequestsActivity extends AppCompatActivity {
             ListView listView = (ListView)(findViewById(R.id.listviewslackrequests));
 
             ListViewRequestAdapter adapter = new ListViewRequestAdapter(
-                    ViewSlackRequestsActivity.this,
+                    TakeNotesActivity.this,
                     requests);
             listView.setAdapter(adapter);
 
             //overwrite the current onitemclicklistener so when listitem is selected you go to the
             //'Notetakers' profile
-            listView.setOnItemClickListener(new OnItemClickListener() {
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position,
                                         long id) {
-                    Intent intent = new Intent(ViewSlackRequestsActivity.this, ProfileActivity.class);
-                    intent.putExtra("request_id", requests.get(position).getId());
-                    intent.putExtra("user_id", requests.get(position).getUser());
-                    startActivity(intent);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(TakeNotesActivity.this);
+                    builder.setTitle("Accept Request to Take Notes?");
+
+                    builder.setPositiveButton(R.string.accept, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // Set this request as Pending
+                            // Toast: request has been sent
+                            // Refresh Screen
+                        }
+                    });
+                    builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // Return to take note request screen
+                        }
+                    });
+
+                    builder.show();  //<-- See This!
 
                 }
             });

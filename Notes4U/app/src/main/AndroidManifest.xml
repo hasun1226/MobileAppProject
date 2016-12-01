@@ -47,6 +47,8 @@
         <activity
             android:name=".SlackerMenuActivity"
             android:label="Slacker Menu" />
+        <activity android:name=".TakeNotesActivity" />
+        <activity android:name=".ViewPendingActivity"></activity>
     </application>
 
 </manifest>
