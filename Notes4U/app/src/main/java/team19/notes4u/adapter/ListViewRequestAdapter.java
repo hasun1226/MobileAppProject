@@ -1,6 +1,7 @@
 package team19.notes4u.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,6 +62,13 @@ public class ListViewRequestAdapter extends BaseAdapter {
         }
         holder.courseCode.setText(objects.get(position).getCourse());
         holder.status.setText(Request.changeStatus(objects.get(position).getStatus()));
+        if (objects.get(position).getStatus().equals("0")) {
+            holder.status.setTextColor(Color.RED); //this is green color
+        } else if (objects.get(position).getStatus().equals("1")) {
+            holder.status.setTextColor(Color.YELLOW);
+        } else if (objects.get(position).getStatus().equals("2")) {
+            holder.status.setTextColor(Color.GREEN);
+        }
         holder.location.setText(objects.get(position).getLocation());
         holder.dateTime.setText(objects.get(position).getDatetime());
         return convertView;
