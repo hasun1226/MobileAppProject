@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        // Handle navigation view item                   clicks here.
         int id = item.getItemId();
 
         if (id == R.id.post_request) {
@@ -131,7 +131,11 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, ViewPendingActivity.class);
             intent.putExtra("user", user_id);
             startActivity(intent);
+        } else if (id == R.id.view_notifications){
+            Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
+            startActivity(intent);
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

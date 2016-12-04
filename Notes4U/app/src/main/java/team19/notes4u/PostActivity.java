@@ -33,7 +33,7 @@ import team19.notes4u.DB.Course;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class PostActivity extends AppCompatActivity {
+public class  PostActivity extends AppCompatActivity {
 
     List<String> allCourses = new ArrayList<String>();
     private String user_name;

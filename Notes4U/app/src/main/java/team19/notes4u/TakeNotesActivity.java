@@ -58,9 +58,9 @@ public class TakeNotesActivity extends AppCompatActivity {
     private void CreateReply(Request request) {
         System.out.println(request.toString());
         Reply reply = new Reply();
-        reply.setRequest_id(request.getId());
-        reply.setNotetaker_id(user);
-        reply.setSlacker_id(request.getUser());
+        reply.setRequestID(request.getId());
+        reply.setNoteTakerID(user);
+        reply.setSlackerID(request.getUser());
         System.out.println(reply.toString() + "request_id = " + request.getId());
         new InsertReply().execute(reply);
     }
@@ -95,15 +95,16 @@ public class TakeNotesActivity extends AppCompatActivity {
                     r.setCourse(course.get(0).getString("course_code"));
                     r.setStatus(j.getString("status"));
 
-                } catch (JSONException e) {
+                } catch (JSONException e)  {
                     System.out.println("HERE");
                     System.out.println(e.getMessage());
                     e.printStackTrace();
                 }
                 // Doesn't add the requests tha are accepted or posted by the user
                 if(Integer.parseInt(r.getStatus()) != STATUS.ACCEPTED.ordinal() ||
-                        Integer.parseInt(r.getUser()) != Integer.parseInt(user))
+                        Integer.parseInt(r.getUser()) != Integer.parseInt(user)) {
                     requests.add(r);
+                }
             }
             return null;
         }

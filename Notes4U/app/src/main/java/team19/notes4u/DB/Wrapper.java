@@ -133,9 +133,9 @@ public class Wrapper {
         JSONObject params   = new JSONObject();
         JSONObject parent = new JSONObject();
 
-        params.put("notetaker_id", reply.getNotetaker_id());
-        params.put("slacker_id", reply.getSlacker_id());
-        params.put("request_id", reply.getRequest_id());
+        params.put("notetaker_id", reply.getNoteTakerID());
+        params.put("slacker_id", reply.getSlackerID());
+        params.put("request_id", reply.getRequestID());
 
         parent.put("reply", params);
 

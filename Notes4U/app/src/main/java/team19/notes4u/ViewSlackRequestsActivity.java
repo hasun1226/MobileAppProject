@@ -1,8 +1,13 @@
 package team19.notes4u;
 
+import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,12 +15,18 @@ import android.widget.ListView;
 import java.util.List;
 import java.util.ArrayList;
 import android.widget.AdapterView.OnItemClickListener;
-
+import android.app.ProgressDialog;
+import android.app.DownloadManager;
+import android.content.Context;
+import android.os.Environment;
+import android.net.Uri;
+import android.os.PowerManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import team19.notes4u.DB.Wrapper;
+
 import team19.notes4u.DB.Request;
 
 import team19.notes4u.adapter.ListViewRequestAdapter;
@@ -53,6 +64,33 @@ public class ViewSlackRequestsActivity extends AppCompatActivity {
 
         populateSlackRequests(user);
 
+
+        // Here, thisActivity is the current activity
+        if (ContextCompat.checkSelfPermission(ViewSlackRequestsActivity.this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(ViewSlackRequestsActivity.this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+
+            } else {
+
+                // No explanation needed, we can request the permission.
+
+                ActivityCompat.requestPermissions(ViewSlackRequestsActivity.this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1
+                        );
+
+                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
+        }
     }
 
     //        TODO: Find out how to get user id
@@ -89,6 +127,7 @@ public class ViewSlackRequestsActivity extends AppCompatActivity {
                     r.setUser(j.getString("user_id"));
                     r.setCourse(course.get(0).getString("course_code"));
                     r.setStatus(j.getString("status"));
+                    r.setDownload_url(j.getString("download_link"));
 
                 } catch (JSONException e) {
                     System.out.println("HERE");
@@ -115,10 +154,45 @@ public class ViewSlackRequestsActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position,
                                         long id) {
-                    Intent intent = new Intent(ViewSlackRequestsActivity.this, ProfileActivity.class);
-                    intent.putExtra("request_id", requests.get(position).getId());
-                    intent.putExtra("user_id", requests.get(position).getUser());
-                    startActivity(intent);
+
+                    if (requests.get(position).getStatus().equals("3")){
+
+                        String url = requests.get(position).getDownload_url();
+                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+                        request.setDescription("Download Link");
+                        request.setTitle(requests.get(position).getCourse()+" "+requests.get(position).getDatetime());
+                        request.allowScanningByMediaScanner();
+                        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "name-of-the-file.ext");
+
+// get download service and enqueue file
+                        DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                        manager.enqueue(request);
+                        AlertDialog alertDialog = new AlertDialog.Builder(ViewSlackRequestsActivity.this).create(); //Read Update
+                        alertDialog.setTitle("File Downloaded");
+                        alertDialog.setMessage("Your file is now accessible in downloads.");
+                        //alertDialog.setButton(0, "Ok", new DialogInterface.OnClickListener() {
+                        //public void onClick(DialogInterface dialog, int which) {
+                        // }
+                        //});
+                        alertDialog.show();  //<-- See This!
+                    }
+                    else if (requests.get(position).getStatus().equals("0")) {
+                        Intent intent = new Intent(ViewSlackRequestsActivity.this, ProfileActivity.class);
+                        intent.putExtra("request_id", requests.get(position).getId());
+                        intent.putExtra("user_id", requests.get(position).getUser());
+                        startActivity(intent);
+                    }
+                    else {
+                        AlertDialog alertDialog = new AlertDialog.Builder(ViewSlackRequestsActivity.this).create(); //Read Update
+                        alertDialog.setTitle("No file available");
+                        alertDialog.setMessage("Your notetaker has not yet uploaded any notes.");
+                        //alertDialog.setButton(0, "Ok", new DialogInterface.OnClickListener() {
+                        //public void onClick(DialogInterface dialog, int which) {
+                        // }
+                        //});
+                        alertDialog.show();  //<-- See This!
+                    }
 
                 }
             });

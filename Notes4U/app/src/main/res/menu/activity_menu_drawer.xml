@@ -7,16 +7,19 @@
             android:title="Profile" />
         <item
             android:id="@+id/post_request"
-            android:title="Post Request" />
+            android:title="Request Notetaker" />
         <item
             android:id="@+id/notetake"
             android:title="Take Notes" />
         <item
             android:id="@+id/view_pending"
-            android:title="View Pending Notetaker Requests" />
+            android:title="My Notetaking Jobs" />
         <item
             android:id="@+id/view_my_request"
-            android:title="View My Requests for Notes" />
+            android:title="My Requests "/>
+        <item
+            android:id="@+id/view_notifications"
+            android:title="Notifications" />
     </group>
 
 </menu>

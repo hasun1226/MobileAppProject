@@ -11,7 +11,9 @@ public class Request {
     private String course;
     private String datetime;
     private String location;
+    private String message;
     private String status;
+    private String download_url;
 
     public enum STATUS{
         UNACCEPTED, PENDING, ACCEPTED
@@ -24,6 +26,10 @@ public class Request {
     public void setId(String id) {
         this.id = id;
     }
+
+    public void setDownload_url(String url) {this.download_url = url;}
+
+    public String getDownload_url(){ return download_url; }
 
     public String getUser() {
         return user;
@@ -61,6 +67,10 @@ public class Request {
         return this.status;
     }
 
+    public void setMessage(String message) { this.message = message; }
+
+    public String getMessage() { return this.message; }
+
     public static String changeStatus(String status) {
         if(status.equals("0"))
             return "Unaccepted";
@@ -68,6 +78,8 @@ public class Request {
             return "Pending";
         if(status.equals("2"))
             return "Accepted";
+        if(status.equals("3"))
+            return "Download Ready";
         return "N/A";
     }
 
