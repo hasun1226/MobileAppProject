@@ -170,36 +170,8 @@ public class PostActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void args) {
-            Request in = new Request();
-            in.setUser(user_id);
-            String courseDate = getDateFromDatePicker((DatePicker)findViewById(R.id.dateOfCourse));
-            String courseTime = getTimeFromTimePicker((TimePicker)findViewById(R.id.timeOfCourse));
 
-                Request request = new Request();
-                in.setCourse(((Spinner)findViewById(R.id.courseDropDown)).getSelectedItem().toString());
-                request.setDatetime(courseDate + ":" + courseTime);
-                request.setLocation(((EditText)findViewById(R.id.locationOfCourse)).getText().toString().trim());
-
-            Call<ResponseBody> createCall = apiService.create("Requests", in);
-            createCall.enqueue(new Callback<ResponseBody>() {
-                @Override
-                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                    Toast pieceToast= Toast.makeText(getApplicationContext(), "The request has been posted!", Toast.LENGTH_SHORT);
-                    pieceToast.show();
-
-                    Intent intent = new Intent(PostActivity.this, MainActivity.class);
-                    intent.putExtra("user", user_id);
-                    intent.putExtra("username", user_name);
-                    startActivity(intent);
-                }
-
-                @Override
-                public void onFailure(Call<ResponseBody> call, Throwable t) {
-                    System.out.println("Failed adding ratings");
-                }
-            });
-
-            System.out.println("I should probably move to the view requests screen");
+            System.out.println("Request has been posted");
         }
     }
 }
