@@ -43,8 +43,7 @@ public class ProfileActivity extends AppCompatActivity {
         setTitle("NoteTaker Profile");
 
         Intent getting = getIntent();
-        user_id = getting.getExtras().getString("user");
-        user_name = getting.getExtras().getString("username");
+        user_id = getting.getExtras().getString("user_id");
 
         acceptButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -58,17 +57,10 @@ public class ProfileActivity extends AppCompatActivity {
                 //});
                 alertDialog.show();  //<-- See This!
 
-                Intent move = new Intent(ProfileActivity.this, MainActivity.class);
-                move.putExtra("user", user_id);
-                move.putExtra("username", user_name);
-                startActivity(move);
             }
         });
 
-        Intent intent = getIntent();
-        //String userName = intent.getStringExtra(MainActivity.USER_NAME);
-        int userID = 1;//intent.getIntExtra(MainActivity.USER_ID);
-        url = "users/" + Integer.toString(userID) + "/ratings";
+        url = "replies";
         wrapper = new Wrapper(url);
         new fetchData().execute();
     }
@@ -93,12 +85,10 @@ public class ProfileActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(List<JSONObject> jsonObjects) {
             try {
-                JSONObject user = jsonObjects.get(0);
-                rating = user.getString("rating");
                 starRating.setNumStars(5);
                 starRating.setRating(Integer.parseInt(rating)%7);
                 userName.setText("Steve Johnson");
-            } catch (JSONException e){
+            } catch (Exception e){
                 e.printStackTrace();
             }
         }

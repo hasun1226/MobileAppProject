@@ -36,7 +36,7 @@ import team19.notes4u.model.ApiService;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class PostActivity extends AppCompatActivity {
+public class  PostActivity extends AppCompatActivity {
 
     List<String> allCourses = new ArrayList<String>();
     Retrofit retrofit;

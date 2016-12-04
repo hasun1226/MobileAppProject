@@ -61,7 +61,7 @@ public class TakeNotesActivity extends AppCompatActivity {
             //        http://notes4u.herokuapp.com/users/1/requests
 //        format: 'users' + userid + '/requests'
 
-            String connectionStringRequests = ("users/" + user + "/requests");
+            String connectionStringRequests = ("/requests");
             Wrapper wrapper = new Wrapper(connectionStringRequests);
 
 //        Object[] request_array = wrapper.getJsonObjects();
@@ -83,13 +83,14 @@ public class TakeNotesActivity extends AppCompatActivity {
                     r.setCourse(course.get(0).getString("course_code"));
                     r.setStatus(j.getString("status"));
 
-                } catch (JSONException e) {
+                } catch (JSONException e)  {
                     System.out.println("HERE");
                     System.out.println(e.getMessage());
                     e.printStackTrace();
                 }
-                if(Integer.parseInt(r.getStatus()) != STATUS.ACCEPTED.ordinal())
+                if(Integer.parseInt(r.getStatus()) != STATUS.ACCEPTED.ordinal() && !r.getId().equals(user)) {
                     requests.add(r);
+                }
             }
             return null;
         }

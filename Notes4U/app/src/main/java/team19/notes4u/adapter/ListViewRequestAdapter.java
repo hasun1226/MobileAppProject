@@ -68,6 +68,8 @@ public class ListViewRequestAdapter extends BaseAdapter {
             holder.status.setTextColor(Color.YELLOW);
         } else if (objects.get(position).getStatus().equals("2")) {
             holder.status.setTextColor(Color.GREEN);
+        } else if (objects.get(position).getStatus().equals("3")) {
+            holder.status.setTextColor(Color.BLUE);
         }
         holder.location.setText(objects.get(position).getLocation());
         holder.dateTime.setText(objects.get(position).getDatetime());

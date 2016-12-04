@@ -67,8 +67,8 @@ public class NotificationActivity extends AppCompatActivity {
 
 //        Object[] request_array = wrapper.getJsonObjects();
 
-            List<JSONObject> request_array = wrapper.getJsonObjects();
-            for(JSONObject j : request_array){
+            List<JSONObject> notification_array = wrapper.getJsonObjects();
+            for(JSONObject j : notification_array){
                 Request r = new Request();
                 //System.out.println(j.toString());
 
