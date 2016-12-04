@@ -1,7 +1,12 @@
 package team19.notes4u;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -34,6 +39,7 @@ import java.util.List;
 
 import team19.notes4u.DB.User;
 import team19.notes4u.model.ApiService;
+import team19.notes4u.pollHelpers.PollAlarmManager;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -82,6 +88,9 @@ public class MainActivity extends AppCompatActivity
         TextView txt = (TextView) headerView.findViewById(R.id.greeting);
         txt.setText("Welcome, " + user_name + "!");
         navigationView.setNavigationItemSelectedListener(this);
+
+        new PollTask().execute();
+
     }
 
     @Override
@@ -142,5 +151,34 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public String getUserId(){
+        return user_id;
+    }
+
+    private class PollTask extends AsyncTask<String, Void, Void> {
+        private AlarmManager alarmMgr;
+        private PendingIntent alarmIntent;
+
+        public Void doInBackground(String... strings) {
+            long totalSize = 0;
+            try {
+                alarmMgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                Intent intent = new Intent(MainActivity.this, PollAlarmManager.class);
+                for (String str: strings) {
+                    intent.putExtra("user", str);
+                }
+
+                alarmIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
+
+                alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                        SystemClock.elapsedRealtime() + 2000,
+                        2000, alarmIntent);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
     }
 }
