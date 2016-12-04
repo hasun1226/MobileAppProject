@@ -1,5 +1,7 @@
 package team19.notes4u.DB;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by Jimmy on 11/11/2016.
  */
@@ -19,6 +21,7 @@ public class User {
     private String password;
     private String major;
     private String profile_picture;
+    private Bitmap profile_image;
 
     public String getId() {
         return id;
@@ -106,5 +109,13 @@ public class User {
 
     public void setProfile_picture(String profile_picture) {
         this.profile_picture = profile_picture;
+    }
+
+    public void setProfile_Image(Bitmap i){
+        this.profile_image = i;
+    }
+
+    public Bitmap getProfile_image(){
+        return this.profile_image;
     }
 }

@@ -53,8 +53,7 @@
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/logo"
-            android:background="@drawable/testdp"
+            android:id="@+id/noteTakerProfilePic"
             android:layout_gravity="center">
         </ImageView>
     </LinearLayout>
