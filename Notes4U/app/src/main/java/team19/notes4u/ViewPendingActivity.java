@@ -77,8 +77,8 @@ public class ViewPendingActivity extends AppCompatActivity {
                 try {
                     String connectionStringCourse = ("courses/" + j.getString("course_id"));
                     Wrapper coursesWrapper = new Wrapper(connectionStringCourse);
-                    List<JSONObject> course = coursesWrapper.getJsonObjects();
 
+                    List<JSONObject> course = coursesWrapper.getJsonObjects();
                     r.setDatetime(j.getString("when"));
                     r.setLocation(j.getString("location"));
                     r.setId(j.getString("id"));
