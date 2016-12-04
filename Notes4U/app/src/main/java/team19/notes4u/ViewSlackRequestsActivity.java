@@ -154,7 +154,6 @@ public class ViewSlackRequestsActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position,
                                         long id) {
-
                     if (requests.get(position).getStatus().equals("3")){
 
                         String url = requests.get(position).getDownload_url();
@@ -179,6 +178,9 @@ public class ViewSlackRequestsActivity extends AppCompatActivity {
                     }
                     else if (requests.get(position).getStatus().equals("0")) {
                         Intent intent = new Intent(ViewSlackRequestsActivity.this, ProfileActivity.class);
+                    }
+                    else if(requests.get(position).getStatus() == "1") {
+                        Intent intent = new Intent(ViewSlackRequestsActivity.this, ViewNotetakersWhoReplied.class);
                         intent.putExtra("request_id", requests.get(position).getId());
                         intent.putExtra("user_id", requests.get(position).getUser());
                         startActivity(intent);
@@ -193,7 +195,6 @@ public class ViewSlackRequestsActivity extends AppCompatActivity {
                         //});
                         alertDialog.show();  //<-- See This!
                     }
-
                 }
             });
         }
