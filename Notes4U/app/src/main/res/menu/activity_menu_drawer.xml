@@ -17,6 +17,9 @@
         <item
             android:id="@+id/view_my_request"
             android:title="View My Requests for Notes" />
+        <item
+            android:id="@+id/view_notifications"
+            android:title="View My Requests for Notes" />
     </group>
 
 </menu>

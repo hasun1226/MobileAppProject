@@ -11,6 +11,7 @@ public class Request {
     private String course;
     private String datetime;
     private String location;
+    public String message;
     private String status;
 
     public enum STATUS{
@@ -60,6 +61,10 @@ public class Request {
     public String getStatus(){
         return this.status;
     }
+
+    public void setMessage(String message) { this.message = message; }
+
+    public String getMessage() { return this.message; }
 
     public static String changeStatus(String status) {
         if(status.equals("0"))

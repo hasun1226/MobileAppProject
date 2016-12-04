@@ -137,7 +137,11 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, ViewPendingActivity.class);
             intent.putExtra("user", user_id);
             startActivity(intent);
+        } else if (id == R.id.view_notifications){
+            Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
+            startActivity(intent);
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
