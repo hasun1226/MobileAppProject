@@ -1,6 +1,7 @@
 package team19.notes4u;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
@@ -159,7 +160,7 @@ public class ViewSlackRequestsActivity extends AppCompatActivity {
                         String url = requests.get(position).getDownload_url();
                         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
                         request.setDescription("Download Link");
-                        request.setTitle("Download PDF");
+                        request.setTitle(requests.get(position).getCourse()+" "+requests.get(position).getDatetime());
                         request.allowScanningByMediaScanner();
                         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "name-of-the-file.ext");
@@ -167,11 +168,31 @@ public class ViewSlackRequestsActivity extends AppCompatActivity {
 // get download service and enqueue file
                         DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
                         manager.enqueue(request);
+                        AlertDialog alertDialog = new AlertDialog.Builder(ViewSlackRequestsActivity.this).create(); //Read Update
+                        alertDialog.setTitle("File Downloaded");
+                        alertDialog.setMessage("Your file is now accessible in downloads.");
+                        //alertDialog.setButton(0, "Ok", new DialogInterface.OnClickListener() {
+                        //public void onClick(DialogInterface dialog, int which) {
+                        // }
+                        //});
+                        alertDialog.show();  //<-- See This!
                     }
-                    Intent intent = new Intent(ViewSlackRequestsActivity.this, ProfileActivity.class);
-                    intent.putExtra("request_id", requests.get(position).getId());
-                    intent.putExtra("user_id", requests.get(position).getUser());
-                    startActivity(intent);
+                    else if (requests.get(position).getStatus().equals("0")) {
+                        Intent intent = new Intent(ViewSlackRequestsActivity.this, ProfileActivity.class);
+                        intent.putExtra("request_id", requests.get(position).getId());
+                        intent.putExtra("user_id", requests.get(position).getUser());
+                        startActivity(intent);
+                    }
+                    else {
+                        AlertDialog alertDialog = new AlertDialog.Builder(ViewSlackRequestsActivity.this).create(); //Read Update
+                        alertDialog.setTitle("No file available");
+                        alertDialog.setMessage("Your notetaker has not yet uploaded any notes.");
+                        //alertDialog.setButton(0, "Ok", new DialogInterface.OnClickListener() {
+                        //public void onClick(DialogInterface dialog, int which) {
+                        // }
+                        //});
+                        alertDialog.show();  //<-- See This!
+                    }
 
                 }
             });
