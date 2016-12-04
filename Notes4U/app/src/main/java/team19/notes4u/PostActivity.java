@@ -15,23 +15,20 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import team19.notes4u.DB.Rating;
 import team19.notes4u.DB.Request;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
 import team19.notes4u.DB.Wrapper;
 import team19.notes4u.DB.Course;
-import team19.notes4u.model.ApiService;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,10 +36,9 @@ import org.json.JSONObject;
 public class PostActivity extends AppCompatActivity {
 
     List<String> allCourses = new ArrayList<String>();
-    Retrofit retrofit;
-    ApiService apiService;
     private String user_name;
     private String user_id;
+    Map<String, Course> courses = new HashMap<String, Course>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,28 +58,27 @@ public class PostActivity extends AppCompatActivity {
         user_name = intent.getExtras().getString("username");
         user_id = intent.getExtras().getString("user");
 
-        retrofit = new Retrofit.Builder().baseUrl("https://notes4u.herokuapp.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        apiService = retrofit.create(ApiService.class);
     }
 
 
     public void createRequest(View v){
         String course = ((Spinner)findViewById(R.id.courseDropDown)).getSelectedItem().toString();
+        Course c = courses.get(course);
         String courseDate = getDateFromDatePicker((DatePicker)findViewById(R.id.dateOfCourse));
         String courseTime = getTimeFromTimePicker((TimePicker)findViewById(R.id.timeOfCourse));
+
         String courseLocation = ((EditText)findViewById(R.id.locationOfCourse)).getText().toString().trim();
-        String USER_ID = "1"; //Sample, Get USER ID
+        String USER_ID = user_id;
         if(courseLocation.equals("")) {
             ((EditText) findViewById(R.id.locationOfCourse)).setError("Location of course is required");
         }
         else{
             Request request = new Request();
-            request.setCourse(course);
-            request.setDatetime(courseDate + ":" + courseTime);
+            request.setCourse(c.getId());
+            request.setDatetime(courseDate + " " + courseTime);
             request.setLocation(courseLocation);
             request.setUser(USER_ID);
+            System.out.println("datetime = " + request.getDatetime());
             new InsertRequest().execute(request);
         }
 
@@ -95,13 +90,13 @@ public class PostActivity extends AppCompatActivity {
         int month = datePicker.getMonth();
         int year =  datePicker.getYear();
 
-        return Integer.toString(day) + "/" + Integer.toString(month) + "/" + Integer.toString(year);
+        return Integer.toString(day) + " " + Integer.toString(month) + " " + Integer.toString(year) ;
     }
 
     @TargetApi(Build.VERSION_CODES.M)
     public static String getTimeFromTimePicker(TimePicker timePicker) {
         timePicker.clearFocus();
-        String time = Integer.toString(timePicker.getHour()) + ":" + Integer.toString(timePicker.getMinute());
+        String time = Integer.toString(timePicker.getHour()) + ":" + Integer.toString(timePicker.getMinute()) + ":00";
 
         return time;
     }
@@ -112,7 +107,6 @@ public class PostActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
             List<JSONObject> courseList = new ArrayList<JSONObject>();
-            List<Course> courses = new ArrayList<Course>();
             courseList = new Wrapper("courses").getJsonObjects();
 
             try {
@@ -126,7 +120,7 @@ public class PostActivity extends AppCompatActivity {
                     course.setProfessor(jsonobject.optString("professor"));
 
                     // Populate spinner with country names
-                    courses.add(course);
+                    courses.put(course.toString(), course);
                     allCourses.add(course.toString());
 
                 }
@@ -170,8 +164,13 @@ public class PostActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void args) {
+            Toast pieceToast= Toast.makeText(getApplicationContext(), "The request has been posted!", Toast.LENGTH_SHORT);
+            pieceToast.show();
 
-            System.out.println("Request has been posted");
+            Intent intent = new Intent(PostActivity.this, MainActivity.class);
+            intent.putExtra("user", user_id);
+            intent.putExtra("username", user_name);
+            startActivity(intent);
         }
     }
 }

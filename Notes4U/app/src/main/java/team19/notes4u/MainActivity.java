@@ -25,15 +25,6 @@ import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.POST;
-import retrofit2.http.Query;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -45,18 +36,12 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
         private String user_name;
         private String user_id;
-    Retrofit retrofit;
-    ApiService apiService;
     private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        retrofit = new Retrofit.Builder().baseUrl("https://notes4u.herokuapp.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        apiService = retrofit.create(ApiService.class);
         textView = (TextView) findViewById(R.id.textView4);
 
         Intent intent = getIntent();

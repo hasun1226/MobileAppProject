@@ -91,8 +91,8 @@ public class Wrapper {
 		//String courseTime = getTimeFromTimePicker((TimePicker)findViewById(R.id.timeOfCourse));
 
 		params.put("user_id", request.getUser());
-		params.put("course_id", "1");
-		params.put("when", "Thu, 29 Feb 2016 22:45:10");
+		params.put("course_id", request.getCourse());
+		params.put("when", request.getDatetime());
 		params.put("location", request.getLocation());
 
 		parent.put("request", params);
@@ -119,6 +119,47 @@ public class Wrapper {
 		}
 
 	}
+
+    public void InsertReply(Reply reply) throws JSONException, IOException {
+        URL object = new URL(connectionString);
+
+        HttpURLConnection con = (HttpURLConnection) object.openConnection();
+        con.setDoOutput(true);
+        con.setDoInput(true);
+        con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+        con.setRequestProperty("Accept", "application/json");
+        con.setRequestMethod("POST");
+
+        JSONObject params   = new JSONObject();
+        JSONObject parent = new JSONObject();
+
+        params.put("notetaker_id", reply.getNotetaker_id());
+        params.put("slacker_id", reply.getSlacker_id());
+
+        parent.put("reply", params);
+
+        OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream());
+        wr.write(parent.toString());
+        wr.flush();
+
+        //display what returns the POST request
+
+        StringBuilder sb = new StringBuilder();
+        int HttpResult = con.getResponseCode();
+        if (HttpResult == HttpURLConnection.HTTP_OK) {
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(con.getInputStream(), "utf-8"));
+            String line = null;
+            while ((line = br.readLine()) != null) {
+                sb.append(line + "\n");
+            }
+            br.close();
+            System.out.println("" + sb.toString());
+        } else {
+            System.out.println(con.getResponseMessage());
+        }
+
+    }
 
 	private String getContent() throws IOException {
 		URL url = new URL(this.connectionString);

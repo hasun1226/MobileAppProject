@@ -9,14 +9,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import team19.notes4u.DB.Course;
+import team19.notes4u.DB.Reply;
 import team19.notes4u.DB.Request;
 import team19.notes4u.DB.Wrapper;
 import team19.notes4u.adapter.ListViewRequestAdapter;
@@ -53,6 +55,15 @@ public class TakeNotesActivity extends AppCompatActivity {
         new DownloadRequestList().execute();
     }
 
+    private void CreateReply(Request request) {
+        System.out.println(request.toString());
+        Reply reply = new Reply();
+        reply.setNotetaker_id(user);
+        reply.setSlacker_id(request.getUser());
+        System.out.println(reply.toString());
+        new InsertReply().execute(reply);
+    }
+
     // Download JSON file AsyncTask
     private class DownloadRequestList extends AsyncTask<Object, Object, Void> {
 
@@ -61,7 +72,7 @@ public class TakeNotesActivity extends AppCompatActivity {
             //        http://notes4u.herokuapp.com/users/1/requests
 //        format: 'users' + userid + '/requests'
 
-            String connectionStringRequests = ("users/" + user + "/requests");
+            String connectionStringRequests = ("/requests");
             Wrapper wrapper = new Wrapper(connectionStringRequests);
 
 //        Object[] request_array = wrapper.getJsonObjects();
@@ -88,7 +99,9 @@ public class TakeNotesActivity extends AppCompatActivity {
                     System.out.println(e.getMessage());
                     e.printStackTrace();
                 }
-                if(Integer.parseInt(r.getStatus()) != STATUS.ACCEPTED.ordinal())
+                // Doesn't add the requests tha are accepted or posted by the user
+                if(Integer.parseInt(r.getStatus()) != STATUS.ACCEPTED.ordinal() ||
+                        Integer.parseInt(r.getUser()) != Integer.parseInt(user))
                     requests.add(r);
             }
             return null;
@@ -107,15 +120,19 @@ public class TakeNotesActivity extends AppCompatActivity {
             //'Notetakers' profile
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position,
+                public void onItemClick(final AdapterView<?> parent, View view, final int position,
                                         long id) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(TakeNotesActivity.this);
                     builder.setTitle("Accept Request to Take Notes?");
 
                     builder.setPositiveButton(R.string.accept, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
+
                             // Set this request as Pending
-                            // Toast: request has been sent
+                            CreateReply((Request) parent.getAdapter().getItem(position));
+
+                            Toast pieceToast= Toast.makeText(getApplicationContext(), "You have applied to be a notetaker!", Toast.LENGTH_SHORT);
+                            pieceToast.show();
                             // Refresh Screen
                         }
                     });
@@ -129,6 +146,24 @@ public class TakeNotesActivity extends AppCompatActivity {
 
                 }
             });
+        }
+    }
+
+    private class InsertReply extends AsyncTask<Reply, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Reply... replies) {
+            Wrapper wrapper = new Wrapper("replies");
+            for(int i=0; i< replies.length; i++) {
+                try {
+                    wrapper.InsertReply(replies[i]);
+                } catch (JSONException e) {
+                    System.out.println(e.getMessage());
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+            return null;
         }
     }
 }
