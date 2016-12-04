@@ -58,9 +58,10 @@ public class TakeNotesActivity extends AppCompatActivity {
     private void CreateReply(Request request) {
         System.out.println(request.toString());
         Reply reply = new Reply();
+        reply.setRequest_id(request.getId());
         reply.setNotetaker_id(user);
         reply.setSlacker_id(request.getUser());
-        System.out.println(reply.toString());
+        System.out.println(reply.toString() + "request_id = " + request.getId());
         new InsertReply().execute(reply);
     }
 
@@ -156,6 +157,7 @@ public class TakeNotesActivity extends AppCompatActivity {
             Wrapper wrapper = new Wrapper("replies");
             for(int i=0; i< replies.length; i++) {
                 try {
+                    System.out.println(replies[i]);
                     wrapper.InsertReply(replies[i]);
                 } catch (JSONException e) {
                     System.out.println(e.getMessage());

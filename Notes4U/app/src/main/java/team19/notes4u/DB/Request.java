@@ -77,6 +77,6 @@ public class Request {
 
     @Override
     public String toString(){
-        return getLocation() + ":" + getDatetime();
+        return "Location = " + getLocation() + ", Datetime = " + getDatetime() + ", Slacker = " + getUser();
     }
 }

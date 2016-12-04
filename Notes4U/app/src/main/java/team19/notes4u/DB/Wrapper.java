@@ -135,6 +135,7 @@ public class Wrapper {
 
         params.put("notetaker_id", reply.getNotetaker_id());
         params.put("slacker_id", reply.getSlacker_id());
+        params.put("request_id", reply.getRequest_id());
 
         parent.put("reply", params);
 
