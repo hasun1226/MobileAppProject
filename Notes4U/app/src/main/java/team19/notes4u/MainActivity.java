@@ -32,7 +32,6 @@ import retrofit2.http.Query;
 import java.io.IOException;
 import java.util.List;
 
-import team19.notes4u.DB.Rating;
 import team19.notes4u.DB.User;
 import team19.notes4u.model.ApiService;
 
@@ -61,6 +60,15 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -74,31 +82,6 @@ public class MainActivity extends AppCompatActivity
         TextView txt = (TextView) headerView.findViewById(R.id.greeting);
         txt.setText("Welcome, " + user_name + "!");
         navigationView.setNavigationItemSelectedListener(this);
-    }
-
-    public void addRating(View view) throws JSONException {
-        Call<ResponseBody> createCall = apiService.create("Ratings", new Rating(1,1));
-        createCall.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-
-                    System.out.println(response == null);
-                    textView.setText("Created new rating");
-
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                System.out.println("Failed adding ratings");
-            }
-        });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
     @Override
