@@ -183,6 +183,7 @@ public class ViewSlackRequestsActivity extends AppCompatActivity {
                         Intent intent = new Intent(ViewSlackRequestsActivity.this, ViewNotetakersWhoReplied.class);
                         intent.putExtra("request_id", requests.get(position).getId());
                         intent.putExtra("user_id", requests.get(position).getUser());
+                        intent.putExtra("user", user);
                         startActivity(intent);
                     }
                     else {

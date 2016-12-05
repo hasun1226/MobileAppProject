@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ import static team19.notes4u.PostActivity.getTimeFromTimePicker;
 
 public class Wrapper {
 
-	private final String staticConnectionString = "http://notes4u.herokuapp.com/";
+	private static final String staticConnectionString = "http://notes4u.herokuapp.com/";
 
 	private String ObjectType;
 	private String connectionString = staticConnectionString;
@@ -161,6 +162,27 @@ public class Wrapper {
         }
 
     }
+
+	public static void CreateEmptyGetRequest(String url){
+		try {
+			String USER_AGENT = "Mozilla/5.0";
+			URL object = new URL(staticConnectionString + url);
+
+			HttpURLConnection con = (HttpURLConnection) object.openConnection();
+
+			con.setRequestMethod("GET");
+			con.setRequestProperty("User-Agent", USER_AGENT);
+
+			int responseCode = con.getResponseCode();
+
+		}
+		catch(MalformedURLException e){
+
+		}
+		catch(IOException e){
+
+		}
+	}
 
 	private String getContent() throws IOException {
 		URL url = new URL(this.connectionString);

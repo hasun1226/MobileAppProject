@@ -20,7 +20,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import team19.notes4u.DB.Request;
 import team19.notes4u.DB.Wrapper;
 import team19.notes4u.adapter.ProfileViewRequestAdapter;
 import team19.notes4u.DB.User;
@@ -31,6 +30,7 @@ public class ViewNotetakersWhoReplied extends AppCompatActivity {
     String request_id;
 
     List<User> replies = new ArrayList<User>();
+    List<String> replies_id = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +76,7 @@ public class ViewNotetakersWhoReplied extends AppCompatActivity {
             List<JSONObject> replies_array = wrapper.getJsonObjects();
             for(JSONObject j : replies_array){
                 User u = new User();
-                //System.out.println(j.toString());
+                String reply_id = "";
 
                 try {
                     String connectionStringCourse = ("users/" + j.getString("notetaker_id"));
@@ -88,12 +88,15 @@ public class ViewNotetakersWhoReplied extends AppCompatActivity {
                     u.setProfile_picture(users.get(0).getString("profile_picture"));
                     u.setProfile_Image(loadBitmap(u.getProfile_picture()));
 
+                    reply_id = j.getString("id");
+
 
                 } catch (JSONException e) {
                     System.out.println(e.getMessage());
                     e.printStackTrace();
                 }
                 replies.add(u);
+                replies_id.add(reply_id);
             }
             return null;
         }
@@ -129,9 +132,14 @@ public class ViewNotetakersWhoReplied extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> parent, View view, int position,
                                         long id) {
                     Intent intent = new Intent(ViewNotetakersWhoReplied.this, ProfileActivity.class);
+                    intent.putExtra("user_id", user);
+                    intent.putExtra("notetaker_id", replies.get(position).getId());
+
                     intent.putExtra("notetaker_id", replies.get(position).getId());
                     intent.putExtra("notetaker_email", replies.get(position).getEmail());
                     intent.putExtra("notetaker_profile_picture", replies.get(position).getProfile_image());
+
+                    intent.putExtra("reply_id", replies_id.get(position));
                     startActivity(intent);
 
                 }

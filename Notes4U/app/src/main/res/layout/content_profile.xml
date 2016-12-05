@@ -67,7 +67,8 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:elevation="15dp"
         android:layout_alignBottom="@+id/bottom_panel"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="reply"/>
 
 
 </RelativeLayout>
