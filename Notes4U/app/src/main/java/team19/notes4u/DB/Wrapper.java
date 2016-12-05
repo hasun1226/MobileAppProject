@@ -1,8 +1,6 @@
 package team19.notes4u.DB;
 
 import android.widget.DatePicker;
-import android.widget.Spinner;
-import android.widget.TimePicker;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -12,18 +10,12 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Date;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.net.HttpURLConnection;
-import java.io.DataOutputStream;
 
 import org.json.*;
-
-import team19.notes4u.R;
-
-import static team19.notes4u.PostActivity.getTimeFromTimePicker;
 
 public class Wrapper {
 
@@ -49,11 +41,13 @@ public class Wrapper {
 		Matcher m = null;
 		try {
 			m = p.matcher(getContent());
+
 		}
 		catch (Exception e){
 			System.out.println(e.getCause());
 			System.out.println(e.getMessage());
 		}
+        if (m == null) return jsonObjects;
 		while(m.find()){
 			try{
 			jsonObjects.add(new JSONObject(m.group()));
@@ -86,9 +80,6 @@ public class Wrapper {
 
 		JSONObject params   = new JSONObject();
 		JSONObject parent = new JSONObject();
-
-		//String courseDate = getDateFromDatePicker((DatePicker)findViewById(R.id.dateOfCourse));
-		//String courseTime = getTimeFromTimePicker((TimePicker)findViewById(R.id.timeOfCourse));
 
 		params.put("user_id", request.getUser());
 		params.put("course_id", request.getCourse());
@@ -164,11 +155,13 @@ public class Wrapper {
 
 	private String getContent() throws IOException {
 		URL url = new URL(this.connectionString);
+
 		Scanner s = new Scanner(url.openStream());
 		String out = "";
 		while (s.hasNext()) {
 			out += s.next();
 		}
+
 		s.close();
 		return out;
 	}
