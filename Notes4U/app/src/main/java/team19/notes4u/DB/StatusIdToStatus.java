@@ -7,7 +7,7 @@ package team19.notes4u.DB;
 public class StatusIdToStatus {
 
     public enum STATUS{
-        UNACCEPTED, PENDING, ACCEPTED
+        UNACCEPTED, PENDING, ACCEPTED, COMPLETED
     }
 
 }
