@@ -18,9 +18,6 @@ import android.widget.Toast;
 import team19.notes4u.DB.Request;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;

@@ -100,8 +100,8 @@ public class TakeNotesActivity extends AppCompatActivity {
                     System.out.println(e.getMessage());
                     e.printStackTrace();
                 }
-                // Doesn't add the requests tha are accepted or posted by the user
-                if(Integer.parseInt(r.getStatus()) != STATUS.ACCEPTED.ordinal() ||
+                // Doesn't add the requests that are accepted or posted by the user
+                if(Integer.parseInt(r.getStatus()) != STATUS.ACCEPTED.ordinal() &&
                         Integer.parseInt(r.getUser()) != Integer.parseInt(user)) {
                     requests.add(r);
                 }
