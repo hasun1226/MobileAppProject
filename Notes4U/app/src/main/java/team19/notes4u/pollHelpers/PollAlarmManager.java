@@ -5,12 +5,14 @@ import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import android.R;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,34 +24,83 @@ import team19.notes4u.DB.Wrapper;
  */
 
 public class PollAlarmManager extends BroadcastReceiver {
+    private String user_name;
+    private String user_id;
+    private Context context;
+
     public void onReceive(Context context, Intent intent) {
-        //connect to server..
-        String user = "1";
-        Bundle extras = intent.getExtras();
-        if (extras != null) {
-            user = extras.getString("user");
-        }
-        String urlString = urlString = "notifications/new_notifications/" + user;;
+        user_name = intent.getExtras().getString("username");
+        user_id = intent.getExtras().getString("user");
+        this.context = context;
+//        NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+//
+//        String urlString = urlString = "notifications/new_notifications/" + user_id;
+//        System.out.println(urlString);
+//
+//        Wrapper wrapper = new Wrapper(urlString);
+//        List<JSONObject> noti_list = wrapper.getJsonObjects();
+//        System.out.println(noti_list.toString());
+//        for (JSONObject jObj: noti_list) {
+//            System.out.println("Shouldn't print");
+//            try {
+//                System.out.println("HERE");
+//                // Populate notifications and store them to the user's device
+//                // Notifications goes off
+//
+//                NotificationCompat.Builder mBuilder =
+//                                 new NotificationCompat.Builder(context)
+//                                .setSmallIcon(R.drawable.stat_notify_chat)
+//                                .setContentTitle("Notes4u")
+//                                .setContentText((String) jObj.get("message"));
+//                nm.notify(0, mBuilder.build());
+//
+//
+//            } catch (JSONException e){
+//                System.out.println("BYE");
+//                e.printStackTrace();
+//            }
+//
+//
+//        }
+//        System.out.println("Task done");
+//        if(noti_list.size() > 0){
+//
+//        }
+        new PollNotifList().execute();
+    }
 
-        Wrapper wrapper = new Wrapper(urlString);
-        List<JSONObject> jsonObjects = wrapper.getJsonObjects();
-        for (JSONObject jObj: jsonObjects) {
-            try {
+    private class PollNotifList extends AsyncTask<Object, Object, Void> {
 
-                NotificationCompat.Builder mBuilder =
-                        new NotificationCompat.Builder(context)
-                                .setSmallIcon(R.drawable.stat_notify_chat)
-                                .setContentTitle("Notes4u")
-                                .setContentText((String) jObj.get("message"));
+        @Override
+        protected Void doInBackground(Object... params) {
+            NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-            } catch (JSONException e){
-                e.printStackTrace();
+            String urlString = urlString = "notifications/new_notifications/" + user_id;
+            System.out.println(urlString);
+
+            Wrapper wrapper = new Wrapper(urlString);
+            List<JSONObject> noti_list = wrapper.getJsonObjects();
+            System.out.println(noti_list.toString());
+            int i = 0;
+            for (JSONObject jObj : noti_list) {
+                try {
+                    // Populate notifications and store them to the user's device
+                    // Notifications goes off
+
+                    NotificationCompat.Builder mBuilder =
+                            new NotificationCompat.Builder(context)
+                                    .setSmallIcon(R.drawable.stat_notify_chat)
+                                    .setContentTitle("Notes4u")
+                                    .setContentText((String) jObj.get("message"));
+                    nm.notify(i, mBuilder.build());
+                    i++;
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
-
-
-        }
-        if(jsonObjects.size() > 0){
-
+            return null;
         }
     }
 }

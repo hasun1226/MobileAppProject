@@ -21,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,14 +30,14 @@ import java.io.IOException;
 import java.util.List;
 
 import team19.notes4u.DB.User;
-import team19.notes4u.model.ApiService;
 import team19.notes4u.pollHelpers.PollAlarmManager;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
         private String user_name;
         private String user_id;
-    private TextView textView;
+        private TextView textView;
+        private PendingIntent pendingIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity
         txt.setText("Welcome, " + user_name + "!");
         navigationView.setNavigationItemSelectedListener(this);
 
-        new PollTask().execute();
+        new PollTask().execute(user_id);
 
     }
 
@@ -138,10 +139,6 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public String getUserId(){
-        return user_id;
-    }
-
     private class PollTask extends AsyncTask<String, Void, Void> {
         private AlarmManager alarmMgr;
         private PendingIntent alarmIntent;
@@ -151,14 +148,15 @@ public class MainActivity extends AppCompatActivity
             try {
                 alarmMgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 Intent intent = new Intent(MainActivity.this, PollAlarmManager.class);
-                for (String str: strings) {
+                for (String str : strings) {
                     intent.putExtra("user", str);
+                    System.out.println(str);
                 }
 
                 alarmIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
 
-                alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
-                        SystemClock.elapsedRealtime() + 2000,
+                alarmMgr.setInexactRepeating(AlarmManager.RTC,
+                        System.currentTimeMillis(),
                         2000, alarmIntent);
             } catch (Exception e) {
                 e.printStackTrace();
