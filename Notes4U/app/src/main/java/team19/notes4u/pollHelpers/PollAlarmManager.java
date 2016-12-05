@@ -32,40 +32,7 @@ public class PollAlarmManager extends BroadcastReceiver {
         user_name = intent.getExtras().getString("username");
         user_id = intent.getExtras().getString("user");
         this.context = context;
-//        NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-//
-//        String urlString = urlString = "notifications/new_notifications/" + user_id;
-//        System.out.println(urlString);
-//
-//        Wrapper wrapper = new Wrapper(urlString);
-//        List<JSONObject> noti_list = wrapper.getJsonObjects();
-//        System.out.println(noti_list.toString());
-//        for (JSONObject jObj: noti_list) {
-//            System.out.println("Shouldn't print");
-//            try {
-//                System.out.println("HERE");
-//                // Populate notifications and store them to the user's device
-//                // Notifications goes off
-//
-//                NotificationCompat.Builder mBuilder =
-//                                 new NotificationCompat.Builder(context)
-//                                .setSmallIcon(R.drawable.stat_notify_chat)
-//                                .setContentTitle("Notes4u")
-//                                .setContentText((String) jObj.get("message"));
-//                nm.notify(0, mBuilder.build());
-//
-//
-//            } catch (JSONException e){
-//                System.out.println("BYE");
-//                e.printStackTrace();
-//            }
-//
-//
-//        }
-//        System.out.println("Task done");
-//        if(noti_list.size() > 0){
-//
-//        }
+
         new PollNotifList().execute();
     }
 
