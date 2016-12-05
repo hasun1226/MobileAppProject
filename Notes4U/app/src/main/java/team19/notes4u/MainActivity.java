@@ -52,15 +52,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -121,9 +112,7 @@ public class MainActivity extends AppCompatActivity
             intent.putExtra("user", user_id);
             startActivity(intent);
 
-        } else if (id == R.id.my_profile) {
-
-        } else if (id == R.id.view_my_request) {
+        }  else if (id == R.id.view_my_request) {
             Intent intent = new Intent(MainActivity.this, ViewSlackRequestsActivity.class);
             intent.putExtra("user", user_id);
             startActivity(intent);
@@ -131,9 +120,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.view_pending) {
             Intent intent = new Intent(MainActivity.this, ViewPendingActivity.class);
             intent.putExtra("user", user_id);
-            startActivity(intent);
-        } else if (id == R.id.view_notifications){
-            Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
             startActivity(intent);
         }
 

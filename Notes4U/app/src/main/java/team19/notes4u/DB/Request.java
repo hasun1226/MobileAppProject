@@ -16,7 +16,7 @@ public class Request {
     private String download_url;
 
     public enum STATUS{
-        UNACCEPTED, PENDING, ACCEPTED
+        UNACCEPTED, PENDING, ACCEPTED, COMPLETED
     }
 
     public String getId() {
