@@ -73,6 +73,7 @@ public class TakeNotesActivity extends AppCompatActivity {
             //        http://notes4u.herokuapp.com/users/1/requests
 //        format: 'users' + userid + '/requests'
 
+
             String connectionStringRequests = ("/requests");
             Wrapper wrapper = new Wrapper(connectionStringRequests);
 
@@ -81,9 +82,21 @@ public class TakeNotesActivity extends AppCompatActivity {
             List<JSONObject> request_array = wrapper.getJsonObjects();
             for(JSONObject j : request_array){
                 Request r = new Request();
+                int already_taking = 0;
                 //System.out.println(j.toString());
 
                 try {
+
+                    String connectionNotetakers = connectionStringRequests + "/" + j.getString("id") + "/notetakers";
+                    Wrapper noteTakerWrapper = new Wrapper(connectionNotetakers);
+                    List<JSONObject> notetakers = noteTakerWrapper.getJsonObjects();
+                    for(JSONObject taker : notetakers){
+                        if (Integer.parseInt(taker.getString("id")) == Integer.parseInt(user)) {
+                            System.out.println("HERE " + taker.getString("id"));
+                            already_taking = 1;
+                        }
+                    }
+
                     String connectionStringCourse = ("courses/" + j.getString("course_id"));
                     Wrapper coursesWrapper = new Wrapper(connectionStringCourse);
                     List<JSONObject> course = coursesWrapper.getJsonObjects();
@@ -103,7 +116,8 @@ public class TakeNotesActivity extends AppCompatActivity {
                 // Doesn't add the requests that are accepted or posted by the user
                 if(Integer.parseInt(r.getStatus()) != STATUS.ACCEPTED.ordinal() &&
                         Integer.parseInt(r.getUser()) != Integer.parseInt(user) &&
-                        Integer.parseInt(r.getStatus()) != STATUS.COMPLETED.ordinal()) {
+                        Integer.parseInt(r.getStatus()) != STATUS.COMPLETED.ordinal() &&
+                        already_taking == 0) {
 
                     requests.add(r);
                 }
@@ -138,6 +152,8 @@ public class TakeNotesActivity extends AppCompatActivity {
                             Toast pieceToast= Toast.makeText(getApplicationContext(), "You have applied to be a notetaker!", Toast.LENGTH_SHORT);
                             pieceToast.show();
                             // Refresh Screen
+                            finish();
+                            startActivity(getIntent());
                         }
                     });
                     builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
